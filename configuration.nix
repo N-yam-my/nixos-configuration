@@ -34,6 +34,9 @@
 		git = {
 			enable = true;
 		};
+		gh = {
+			enable = true;
+		};
 		neovim = {
 			enable = true;
 			defaultEditor = true;
