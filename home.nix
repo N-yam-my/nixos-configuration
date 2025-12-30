@@ -5,7 +5,8 @@
                 stateVersion = "25.05";
         };
 	imports = [
-		./git.nix
+		./home-manager/git.nix
+		./home-manager/zsh.nix
 	];
         programs.home-manager.enable = true;
 }
