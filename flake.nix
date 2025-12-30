@@ -1,5 +1,5 @@
 {
-  description = "flake for dynabook";
+	description = "flake for dynabook";
 
 	inputs = {
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
