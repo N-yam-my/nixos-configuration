@@ -1,5 +1,5 @@
 {
-				description = "test flake";
+  description = "flake for dynabook";
 
 	inputs = {
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
@@ -8,35 +8,35 @@
 			url = "github:nix-community/home-manager/release-25.05";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
-  	};
+  };
 
 	outputs = inputs@{ self, nixpkgs, nixos-wsl, home-manager, ... }: {
-		nixosConfigurations = {
-			nyammy = nixpkgs.lib.nixosSystem {
+    nixosConfigurations = {
+      dynabook = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 				modules = [
 					./configuration.nix
 					nixos-wsl.nixosModules.default
-          				{
+          {
 						system.stateVersion = "25.05";
 						wsl.enable = true;
-          				}
-        			];
-      			};
-    		};
-								homeConfigurations = {
-                        nyammy = home-manager.lib.homeManagerConfiguration {
-																pkgs = import nixpkgs {
-																				system = "x86_64-linux";
-																				configure.allowUnfree = true;
-																};
-																extraSpecialArgs = {
-																				inherit inputs;
-																};
-																modules = [
-																				./home.nix
-																];
-												};
-								};
-  	};
+          }
+        ];
+      };
+    };
+    homeConfigurations = {
+      nyammy = home-manager.lib.homeManagerConfiguration {
+        pkgs = import nixpkgs {
+          system = "x86_64-linux";
+          configure.allowUnfree = true;
+        };
+        extraSpecialArgs = {
+          inherit inputs;
+        };
+        modules = [
+          ./home.nix
+        ];
+      };
+    };
+  };
 }
