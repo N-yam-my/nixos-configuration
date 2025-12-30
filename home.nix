@@ -1,13 +1,13 @@
 {
-        home = rec {
-                username = "nyammy";
-                homeDirectory = "/home/${username}";
-                stateVersion = "25.05";
-        };
+  home = rec {
+    username = "nyammy";
+    homeDirectory = "/home/${username}";
+    stateVersion = "25.05";
+  };
 	imports = [
 		./home-manager/git.nix
 		./home-manager/zsh.nix
 		./home-manager/neovim.nix
 	];
-        programs.home-manager.enable = true;
+  programs.home-manager.enable = true;
 }
