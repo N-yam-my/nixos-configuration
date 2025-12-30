@@ -1,4 +1,4 @@
--- local randomNumber = math.random(0,2)
+-- general settings
 local options = {
   --Essentials
   -- guifont = "PlemolJP Console NF:h12",
@@ -30,3 +30,24 @@ local options = {
 for key, value in pairs(options) do
 	vim.opt[key] = value
 end
+
+-- keymaps
+
+vim.g.mapleader = ' '
+-- vim.keymap.set(
+--   {mode},
+--   {lhs},
+--   {rhs},
+--   {opts}
+-- )
+vim.keymap.set(
+  { 'n', },
+  '<leader>tn',
+  '<Cmd>tabnew<CR>'
+)
+
+vim.keymap.set(
+  'n',
+  '<Esc><Esc>',
+  ':nohlsearch<CR><Esc>'
+)
