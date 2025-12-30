@@ -7,6 +7,7 @@
 	imports = [
 		./home-manager/git.nix
 		./home-manager/zsh.nix
+		./home0manager/neovim.nix
 	];
         programs.home-manager.enable = true;
 }
