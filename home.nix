@@ -9,5 +9,6 @@
 		./home-manager/zsh.nix
 		./home-manager/neovim.nix
 	];
+  xdg.enable = true;
   programs.home-manager.enable = true;
 }
