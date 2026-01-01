@@ -20,6 +20,7 @@ local options = {
   virtualedit = 'onemore',
   breakindent = true,
   showbreak = '>',
+  showmatch = true,
   ambiwidth = 'single',
   conceallevel = 2,
   -- Search
