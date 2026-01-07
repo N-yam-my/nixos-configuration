@@ -31,5 +31,5 @@ local opts = {
     missing = false,
   },
 }
--- require("lazy").setup(opts)
+require("lazy").setup(opts)
 
