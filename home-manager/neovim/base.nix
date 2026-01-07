@@ -3,7 +3,11 @@
     enable = true;
     viAlias = true;
     vimAlias = true;
-    # install lazy.nvim
+    # Packages inside neovim
+    extraPackages = with pkgs; [
+      skkDictionaries.l
+    ];
+    # Install lazy.nvim
     plugins = with pkgs.vimPlugins; [
       lazy-nvim
     ];

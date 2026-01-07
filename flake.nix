@@ -1,5 +1,5 @@
 {
-	description = "flake for dynabook";
+	description = "dotfiles for G83/HS";
 
 	inputs = {
 		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -10,7 +10,11 @@
 		};
   };
 
-	outputs = { self, nixpkgs, nixos-wsl, home-manager, ... }@inputs: {
+	outputs = { self, nixpkgs, nixos-wsl, home-manager, ... }@inputs:
+  let
+    sources = pkgs.callPackage ./_sources/generated.nix { };
+  in
+  {
     nixosConfigurations = {
       G83HS = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
@@ -31,7 +35,7 @@
           configure.allowUnfree = true;
         };
         extraSpecialArgs = {
-          inherit inputs;
+          inherit inputs sources;
         };
         modules = [
           ./home-manager

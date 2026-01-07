@@ -1,27 +1,21 @@
 {
   pkgs,
   lib,
-  # sources,
+  sources,
   ...
 }:
 let
   substituteStrings = import ../../lib/substituteStrings.nix;
 
-  # vimdoc-ja = pkgs.vimUtils.buildVimPlugin {
-  #   inherit (sources.vimdoc-ja) pname version src;
-  # };
-  # winresizer-vim = pkgs.vimUtils.buildVimPlugin {
-  #   inherit (sources.winresizer) pname version src;
-  # };
-  # skkeleton = pkgs.vimUtils.buildVimPlugin {
-  #   inherit (sources.skkeleton) pname version src;
-  # };
-  # hlchunk-nvim = pkgs.vimUtils.buildVimPlugin {
-  #   inherit (sources.hlchunk) pname version src;
-  # };
-  # skkeleton_indicator-nvim = pkgs.vimUtils.buildVimPlugin {
-  #   inherit (sources.skkeleton_indicator) pname version src;
-  # };
+  vimdoc-ja = pkgs.vimUtils.buildVimPlugin {
+    inherit (sources.vimdoc-ja) pname version src;
+  };
+  skkeleton = pkgs.vimUtils.buildVimPlugin {
+    inherit (sources.skkeleton) pname version src;
+  };
+  skkeleton_indicator-nvim = pkgs.vimUtils.buildVimPlugin {
+    inherit (sources.skkeleton_indicator) pname version src;
+  };
 in
 {
   programs.neovim.extraLuaConfig =
@@ -31,7 +25,16 @@ in
       tokyonight-nvim
       rainbow-delimiters-nvim
       nvim-autopairs
+
+      vimdoc-ja
       vim-startuptime
+      
+      skkeleton
+      {
+        name = "skkeleton_indicator.nvim";
+        path = skkeleton_indicator-nvim;
+      }
+
       #   {
       #     name = "LuaSnip";
       #     path = luasnip;

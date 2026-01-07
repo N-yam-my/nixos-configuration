@@ -1,21 +1,5 @@
 -- Declare trivial plugins:
-return {
-  {
-    'folke/tokyonight.nvim',
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.cmd([[colorscheme tokyonight]])
-    end,
-  },
---   {
---     'nvim-lualine/lualine.nvim',
---     dependencies = { 'nvim-tree/nvim-web-devicons' },
---     event = 'VeryLazy',
---     config = function()
---       require('lualine').setup{ options = { theme = 'auto' } }
---     end,
---   },
+local spec = {
 --   {'nvim-treesitter/nvim-treesitter',
 --     dependencies = { 'nvim-treesitter/playground' },
 --     build = ':TSUpdate',
@@ -130,6 +114,7 @@ return {
       vim.g.startuptime_tries = 10
     end,
   },
---   { 'vim-jp/vimdoc-ja', keys = { { 'h', mode = 'c' } } },
+  { 'vim-jp/vimdoc-ja', keys = { { 'h', mode = 'c' } } },
 --   -- { 'vimsence/vimsence', event = 'CursorHold' }
 }
+return spec
