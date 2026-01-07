@@ -12,7 +12,7 @@
 
 	outputs = { self, nixpkgs, nixos-wsl, home-manager, ... }@inputs:
   let
-    sources = pkgs.callPackage ./_sources/generated.nix { };
+    sources = nixpkgs.callPackage ./_sources/generated.nix { };
   in
   {
     nixosConfigurations = {
