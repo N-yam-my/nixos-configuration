@@ -5,7 +5,9 @@
     vimAlias = true;
     # Packages inside neovim
     extraPackages = with pkgs; [
+      deno
       skkDictionaries.l
+      skkDictionaries.law
     ];
     # Install lazy.nvim
     plugins = with pkgs.vimPlugins; [

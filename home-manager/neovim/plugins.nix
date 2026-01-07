@@ -23,6 +23,9 @@ in
     let
       plugins = with pkgs.vimPlugins; [
       tokyonight-nvim
+      lualine-nvim
+      nvim-web-devicons
+
       rainbow-delimiters-nvim
       nvim-autopairs
 
@@ -30,6 +33,7 @@ in
       vim-startuptime
       
       skkeleton
+      denops-vim
       {
         name = "skkeleton_indicator.nvim";
         path = skkeleton_indicator-nvim;
@@ -64,7 +68,8 @@ in
       ${lazyConfig}
     '';
 
-  # xdg.dataFile = {
-  #   "skk/SKK-JISYO.L".source = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
-  # };
+  xdg.dataFile = {
+    "skk/SKK-JISYO.L".source = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
+    "skk/SKK-JISYO.law".source = "${pkgs.skkDictionaries.law}/share/skk/SKK-JISYO.law";
+  };
 }
