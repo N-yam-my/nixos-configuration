@@ -6,16 +6,13 @@
     # install lazy.nvim
     plugins = with pkgs.vimPlugins; [
       lazy-nvim
-      tokyonight-nvim
-      rainbow-delimiters-nvim
-      nvim-autopairs
-      vim-startuptime
     ];
     # Expand into ~/.config/nvim/init.lua
-    extraLuaConfig = builtins.readFile ../nvim/init.lua;
+    # extraLuaConfig = builtins.readFile ./init.lua;
   };
+  # Expand into ~/.config/nvim/lua
   xdg.configFile."nvim/lua" = {
     recursive = true;
-    source = ../nvim/lua;
+    source = ./lua;
   };
 }

@@ -7,7 +7,7 @@
 	imports = [
 		./git.nix
 		./zsh.nix
-		./neovim.nix
+		./neovim
 	];
   xdg.enable = true;
   programs.home-manager.enable = true;
