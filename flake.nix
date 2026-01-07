@@ -12,11 +12,17 @@
 
 	outputs = { self, nixpkgs, nixos-wsl, home-manager, ... }@inputs:
   let
-    sources = nixpkgs.callPackage ./_sources/generated.nix { };
+    system = "x86_64-linux";
+    pkgs = import nixpkgs {
+      inherit system;
+      config.allowUnfree = true;
+    };
+    sources = pkgs.callPackage ./_sources/generated.nix { };
   in
   {
     nixosConfigurations = {
       G83HS = nixpkgs.lib.nixosSystem {
+        inherit pkgs;
 				system = "x86_64-linux";
 				modules = [
 					./configuration.nix
@@ -30,10 +36,7 @@
     };
     homeConfigurations = {
       nyammy = home-manager.lib.homeManagerConfiguration {
-        pkgs = import nixpkgs {
-          system = "x86_64-linux";
-          configure.allowUnfree = true;
-        };
+        inherit pkgs;
         extraSpecialArgs = {
           inherit inputs sources;
         };

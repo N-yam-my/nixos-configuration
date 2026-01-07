@@ -13,9 +13,9 @@ let
   skkeleton = pkgs.vimUtils.buildVimPlugin {
     inherit (sources.skkeleton) pname version src;
   };
-  skkeleton_indicator-nvim = pkgs.vimUtils.buildVimPlugin {
-    inherit (sources.skkeleton_indicator) pname version src;
-  };
+  # skkeleton_indicator-nvim = pkgs.vimUtils.buildVimPlugin {
+  #   inherit (sources.skkeleton_indicator) pname version src;
+  # };
 in
 {
   programs.neovim.extraLuaConfig =
@@ -34,10 +34,10 @@ in
       
       skkeleton
       denops-vim
-      {
-        name = "skkeleton_indicator.nvim";
-        path = skkeleton_indicator-nvim;
-      }
+      # {
+      #   name = "skkeleton_indicator.nvim";
+      #   path = skkeleton_indicator-nvim;
+      # }
 
       #   {
       #     name = "LuaSnip";
