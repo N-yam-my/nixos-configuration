@@ -6,7 +6,7 @@
     # install lazy.nvim
     plugins = with pkgs.vimPlugins; [
       lazy-nvim
-      tokyo-night-nvim
+      tokyonight-nvim
       rainbow-delimiters-nvim
       nvim-autopairs
       vim-startuptime
