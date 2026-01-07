@@ -15,7 +15,7 @@ local spec = {
           path .. '/skk/SKK-JISYO.law',
         },
         -- usePopup = false,
-        userDictionary = os.getenv("HOME") .. ".dotfiles/misc/skkeleton",
+        userDictionary = os.getenv("HOME") .. "/.dotfiles/misc/skkeleton",
       })
     end,
     keys = {
