@@ -6,7 +6,7 @@ local spec = {
       -- { 'delphinus/skkeleton_indicator.nvim', opts = {} },
     },
     config = function()
-      local path = os.getenv("XDG_CONFIG_HOME")
+      local path = os.getenv("XDG_DATA_HOME")
       vim.fn['skkeleton#initialize']()
       vim.fn['skkeleton#config']({
         eggLikeNewline = true,
