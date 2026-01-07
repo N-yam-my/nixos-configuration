@@ -15,7 +15,7 @@ local spec = {
           path .. '/skk/SKK-JISYO.law',
         },
         -- usePopup = false,
-        userDictionary = path .. "/_skkeleton",
+        userDictionary = path .. "/skk/skkeleton",
       })
     end,
     keys = {
