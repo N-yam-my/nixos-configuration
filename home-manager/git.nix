@@ -1,7 +1,7 @@
 { pkgs, ... }: {
 	programs.git = {
 		enable = true;
-    setting.user = {
+    settings.user = {
       name = "N-yam-my";
 		  email = "hikonao.yama.1219@gmail.com";
     };
