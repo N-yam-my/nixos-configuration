@@ -2,17 +2,17 @@
 	description = "flake for dynabook";
 
 	inputs = {
-		nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.05";
-		nixos-wsl.url = "github:nix-community/NixOS-WSL/release-25.05";
+		nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+		nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
 		home-manager = {
-			url = "github:nix-community/home-manager/release-25.05";
+			url = "github:nix-community/home-manager";
 			inputs.nixpkgs.follows = "nixpkgs";
 		};
   };
 
-	outputs = inputs@{ self, nixpkgs, nixos-wsl, home-manager, ... }: {
+	outputs = { self, nixpkgs, nixos-wsl, home-manager, ... }@inputs: {
     nixosConfigurations = {
-      dynabook = nixpkgs.lib.nixosSystem {
+      G83HS = nixpkgs.lib.nixosSystem {
 				system = "x86_64-linux";
 				modules = [
 					./configuration.nix
@@ -34,7 +34,7 @@
           inherit inputs;
         };
         modules = [
-          ./home.nix
+          ./home-manager
         ];
       };
     };
