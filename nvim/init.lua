@@ -11,9 +11,9 @@ local opts = {
   spec = {
     { import = "plugins" },
   },
-  pkg = {
-    enabled = false,
-  },
+  -- pkg = {
+  --   enabled = false,
+  -- },
   rocks = {
     enabled = false,
   },
