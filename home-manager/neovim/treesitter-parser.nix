@@ -18,7 +18,7 @@
 	  #   vim
 	  #   vimdoc
 	  # ];
-	  parserPaths = (pkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;
+	  parserPaths = pkgs.vimPlugins.nvim-treesitter.withAllGrammars.dependencies;
     parserPath = pkgs.symlinkJoin {
       name = "treesitter-parsers";
       paths = parserPaths;
