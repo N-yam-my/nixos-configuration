@@ -4,7 +4,7 @@ local spec = {
     lazy = false,
     -- event = { 'BufRead', 'BufNewFile' },
     opts = function(_, opts)
-      opts.install_dir = os.getenv('XDG_DATA_HOME') .. '/nvim/parser'
+      opts.install_dir = os.getenv('XDG_DATA_HOME') .. '/nvim/site'
       -- opts.ensure_installed = {}
     end,
     init = function()
