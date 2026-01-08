@@ -21,22 +21,21 @@ let
 in
 {
   programs.neovim.extraLuaConfig =
-
     let
       plugins = with pkgs.vimPlugins; [
       tokyonight-nvim
       lualine-nvim
       nvim-web-devicons
 
-      # nvim-treesitter
-      (nvim-treesitter.withPlugins (
-        plugins: with plugins; [
-          html
-          nix
-          python
-          toml
-          typst
-        ]))
+      nvim-treesitter
+      # (nvim-treesitter.withPlugins (
+      #   plugins: with plugins; [
+      #     html
+      #     nix
+      #     python
+      #     toml
+      #     typst
+      #   ]))
       rainbow-delimiters-nvim
       nvim-autopairs
 

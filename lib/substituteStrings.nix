@@ -3,7 +3,7 @@ let
     { file, replacements }:
     let
       fileContent = builtins.readFile file;
-      # Replacements: (oldValue, newValue)
+      # Replacements:: {old = Keys; new = Values} (Attribute Set)
       replacementKeys = map (r: r.old) replacements;
       replacementValues = map (r: r.new) replacements;
     in

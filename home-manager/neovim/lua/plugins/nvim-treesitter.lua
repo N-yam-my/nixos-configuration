@@ -1,16 +1,15 @@
 local spec = {
   {
     'nvim-treesitter/nvim-treesitter',
-    lazy = false,
-    -- event = { 'BufRead', 'BufNewFile' },
-    opts = function(_, opts)
-      opts.install_dir = os.getenv('XDG_DATA_HOME') .. '/nvim/site'
-      -- opts.ensure_installed = {}
-    end,
+    -- lazy = false,
+    event = { 'BufRead', 'BufNewFile' },
+    -- opts = function()
+    --   vim.opt.runtimepath:append("@ts_parser_paths@")
+    -- end,
     init = function()
       vim.api.nvim_create_autocmd('FileType', {
         group = vim.api.nvim_create_augroup("vim-treesitter-start", {}),
-        pattern = { 'nix' },
+        -- pattern = { 'nix' },
         callback = function()
           -- syntax highlighting, provided by Neovim
           pcall(vim.treesitter.start)

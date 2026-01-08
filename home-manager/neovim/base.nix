@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{ pkgs, ... }: {
 	programs.neovim = {
 		enable = true;
 		viAlias = true;
@@ -13,6 +10,7 @@
 			skkDictionaries.l
 			skkDictionaries.law
 
+      # # LSPs
 			# lua-language-server
 			# tinymist
 		];
