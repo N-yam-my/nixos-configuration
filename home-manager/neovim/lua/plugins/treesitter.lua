@@ -9,7 +9,7 @@ local spec = {
     init = function()
       vim.api.nvim_create_autocmd('FileType', {
         group = vim.api.nvim_create_augroup("vim-treesitter-start", {}),
-        -- pattern = { 'rust', 'javascript', 'zig' },
+        pattern = { 'nix' },
         callback = function()
           -- syntax highlighting, provided by Neovim
           pcall(vim.treesitter.start)
