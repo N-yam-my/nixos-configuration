@@ -7,8 +7,8 @@
 		extraPackages = with pkgs; [
       # dependencies
 			deno
-      gcc
-			tree-sitter
+			# gcc
+			# tree-sitter
 
       # skk dictionaries
       skkDictionaries.l

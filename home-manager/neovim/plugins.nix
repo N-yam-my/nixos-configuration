@@ -75,5 +75,6 @@ in
     "skk/SKK-JISYO.L".source = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
     "skk/SKK-JISYO.law".source = "${pkgs.skkDictionaries.law}/share/skk/SKK-JISYO.law";
     # "skk/skkeleton".source = mkOutOfStoreSymlink "${builtins.toString config.home.homeDirectory}/.dotfiles/misc/skkeleton"
+    "nvim/site/queries".source ="${pkgs.vimPlugins.nvim-treesitter}/runtime/queries";
   };
 }
