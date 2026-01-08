@@ -24,7 +24,7 @@ local opts = {
   performance = {
     reset_packpath = false,
     rtp = {
-      reset = false,
+      -- reset = false,
     },
   },
   install = {
