@@ -1,20 +1,5 @@
 -- Declare trivial plugins:
 local spec = {
---   {'nvim-treesitter/nvim-treesitter',
---     dependencies = { 'nvim-treesitter/playground' },
---     build = ':TSUpdate',
---     event = { 'BufRead', 'BufNewFile' },
---     config = function()
---       require'nvim-treesitter.configs'.setup {
---         ensure_installed = {},
---         highlight = {
---           enable = true,
---           -- disable = { 'typst' },
---         },
---         indent = { enable = true, },
---       }
---     end
---   },
 --   {
 --     "kylechui/nvim-surround",
 --     version = "*", -- Use for stability; omit to use `main` branch for the latest features
@@ -94,7 +79,6 @@ local spec = {
 --       { '<leader>ft', '<cmd>Neotree toggle<cr>', desc = 'NeoTree' },
 --     },
 --   },
---   {'vim-denops/denops.vim', lazy = true,},
 --   {
 --     'mattn/vim-sonictemplate',
 --     cmd = {'Template', 'Tem'},

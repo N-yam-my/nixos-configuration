@@ -8,6 +8,9 @@
       deno
       skkDictionaries.l
       skkDictionaries.law
+
+      lua-language-server
+      tinymist
     ];
     # Install lazy.nvim
     plugins = with pkgs.vimPlugins; [ lazy-nvim ];
