@@ -5,7 +5,7 @@
     stateVersion = "25.05";
   };
 	imports = [
-    ./gc.nix
+		./gc.nix
 		./git.nix
 		./zsh.nix
 		./neovim
