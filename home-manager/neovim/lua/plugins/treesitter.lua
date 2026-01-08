@@ -18,7 +18,7 @@ local spec = {
           -- indentation, provided by nvim-treesitter
           vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
         end,
-      }
+      })
     end
   },
 }
