@@ -5,9 +5,13 @@
 		vimAlias = true;
 		# Packages inside neovim
 		extraPackages = with pkgs; [
+      # dependencies
 			deno
+      gcc
 			tree-sitter
-			skkDictionaries.l
+
+      # skk dictionaries
+      skkDictionaries.l
 			skkDictionaries.law
 
       # # LSPs
