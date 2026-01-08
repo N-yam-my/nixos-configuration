@@ -8,15 +8,15 @@
     let
 		  parsers = plugins: with plugins; [
 		    html
-		    # lua
+		    lua
 		    nix
 		    python
-		    # query
+		    query
 		    rust
 		    toml
 		    typst
-		    # vim
-		    # vimdoc
+		    vim
+		    vimdoc
 		  ];
 		  parserPaths = (pkgs.vimPlugins.nvim-treesitter.withPlugins parsers).dependencies;
       parserPath = pkgs.symlinkJoin {
