@@ -29,14 +29,14 @@ in
       nvim-web-devicons
 
       # nvim-treesitter
-      (nvim-treesitter.withPlugins (
-        plugins: with plugins; [
-          html
-          nix
-          python
-          toml
-          typst
-        ]))
+      # (nvim-treesitter.withPlugins (plugins:
+      #   with plugins; [
+      #     html
+      #     nix
+      #     python
+      #     toml
+      #     typst
+      #   ]))
       rainbow-delimiters-nvim
       nvim-autopairs
 
