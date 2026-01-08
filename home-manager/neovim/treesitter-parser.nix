@@ -1,50 +1,30 @@
 { pkgs, ... }:
+# let
+#   substituteStrings = import ../../lib/substituteStrings.nix;
+# in
 {
   # https://github.com/nvim-treesitter/nvim-treesitter#i-get-query-error-invalid-node-type-at-position
-  xdg.configFile."nvim/parser".source =
+  xdg.dataFile."nvim/site/parser".source =
     let
-      parsers = pkgs.symlinkJoin {
+		  parsers = plugins: with plugins; [
+		    html
+		    # lua
+		    nix
+		    python
+		    # query
+		    rust
+		    toml
+		    typst
+		    # vim
+		    # vimdoc
+		  ];
+		  parserPaths = (pkgs.vimPlugins.nvim-treesitter.withPlugins parsers).dependencies;
+      parserPath = pkgs.symlinkJoin {
         name = "treesitter-parsers";
-        paths =
-          (pkgs.vimPlugins.nvim-treesitter.withPlugins (
-            plugins: with plugins; [
-              go
-              nix
-              tsx
-              bash
-            ]
-          )).dependencies;
+        paths = parserPaths;
       };
     in
-    "${parsers}/parser";
-}
-# { pkgs, ... }:
-# # let
-# #   substituteStrings = import ../../lib/substituteStrings.nix;
-# # in
-# {
-#   # https://github.com/nvim-treesitter/nvim-treesitter#i-get-query-error-invalid-node-type-at-position
-#   xdg.dataFile."nvim/site/parser".source =
-#     let
-# 		  parsers = plugins: with plugins; [
-# 		    html
-# 		    # lua
-# 		    nix
-# 		    python
-# 		    # query
-# 		    rust
-# 		    toml
-# 		    typst
-# 		    # vim
-# 		    # vimdoc
-# 		  ];
-# 		  parserPaths = (pkgs.vimPlugins.nvim-treesitter.withPlugins parsers).dependencies;
-#       parserPath = pkgs.symlinkJoin {
-#         name = "treesitter-parsers";
-#         paths = parserPaths;
-#       };
-#     in
-#     "${parserPath}/parser";
+    "${parserPath}/parser";
   # xdg.configFile."nvim/lua/plugins/nvim-treesitter.lua".text =
 	# let
 	#   ts_parser_paths = pkgs.lib.pipe parserPaths [

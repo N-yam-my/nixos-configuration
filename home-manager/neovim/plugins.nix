@@ -27,6 +27,8 @@ in
       lualine-nvim
       nvim-web-devicons
 
+      nvim-treesitter
+
       rainbow-delimiters-nvim
       nvim-autopairs
 
