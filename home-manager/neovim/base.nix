@@ -6,6 +6,8 @@
     # Packages inside neovim
     extraPackages = with pkgs; [
       deno
+      tree-sitter
+
       skkDictionaries.l
       skkDictionaries.law
 
