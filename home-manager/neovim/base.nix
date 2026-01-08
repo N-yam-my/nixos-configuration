@@ -6,13 +6,13 @@
     # Packages inside neovim
     extraPackages = with pkgs; [
       deno
-      tree-sitter
+      # tree-sitter
 
       skkDictionaries.l
       skkDictionaries.law
 
-      lua-language-server
-      tinymist
+      # lua-language-server
+      # tinymist
     ];
     # Install lazy.nvim
     plugins = with pkgs.vimPlugins; [ lazy-nvim ];
