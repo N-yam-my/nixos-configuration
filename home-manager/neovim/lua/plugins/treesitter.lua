@@ -4,7 +4,8 @@ local spec = {
     lazy = false,
     -- event = { 'BufRead', 'BufNewFile' },
     opts = function(_, opts)
-      opts.ensure_installed = {}
+      opts.install_dir = os.getenv('XDG_DATA_HOME') .. '/nvim/parser'
+      -- opts.ensure_installed = {}
     end,
     init = function()
       vim.api.nvim_create_autocmd('FileType', {
