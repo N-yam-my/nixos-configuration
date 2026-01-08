@@ -1,6 +1,7 @@
 local spec = {
   {
     'nvim-treesitter/nvim-treesitter',
+    lazy = false,
     -- event = { 'BufRead', 'BufNewFile' },
     opts = function(_, opts)
       opts.ensure_installed = {}
