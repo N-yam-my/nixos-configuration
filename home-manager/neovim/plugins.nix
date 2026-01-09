@@ -34,6 +34,7 @@ in
       lualine-nvim
 
       nvim-treesitter
+      nvim-lspconfig
 
       nvim-autopairs
       {
@@ -58,6 +59,8 @@ in
       #     name = "LuaSnip";
       #     path = luasnip;
       #   }
+
+      typst-preview-nvim
 
       vimdoc-ja
       vim-startuptime
