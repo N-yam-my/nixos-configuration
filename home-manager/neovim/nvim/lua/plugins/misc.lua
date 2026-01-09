@@ -1,5 +1,21 @@
--- Declare trivial plugins:
+-- Declare miscellaneous plugins:
 local spec = {
+  {
+    'folke/tokyonight.nvim',
+    lazy = false,
+    priority = 1000,
+    config = function()
+      vim.cmd([[colorscheme tokyonight]])
+    end,
+  },
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
+    event = 'VeryLazy',
+    opts = {
+      options = { theme = 'tokyonight' }
+    },
+  },
   {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
@@ -48,14 +64,6 @@ local spec = {
         hooks.type.SCOPE_HIGHLIGHT,
         hooks.builtin.scope_highlight_from_extmark
       )
-    end
-  },
-  {
-    'matsui54/denops-popup-preview.vim',
-    dependencies = { 'vim-denops/denops.vim' },
-    event = 'VeryLazy',
-    config = function()
-      vim.fn['popup_preview#enable']()
     end
   },
 --   {

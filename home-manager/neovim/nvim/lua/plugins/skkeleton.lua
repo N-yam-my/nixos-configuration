@@ -1,6 +1,7 @@
 local spec = {
   {
     'vim-skk/skkeleton',
+    event = { 'VeryLazy' },
     dependencies = {
       'vim-denops/denops.vim',
       -- { 'delphinus/skkeleton_indicator.nvim', opts = {} },
@@ -25,5 +26,13 @@ local spec = {
       { 'jk', '<Plug>(skkeleton-toggle)', mode = 'c'},
     }
   },
+  -- {
+  --   'matsui54/denops-popup-preview.vim',
+  --   dependencies = { 'vim-denops/denops.vim' },
+  --   event = 'VeryLazy',
+  --   config = function()
+  --     vim.fn['popup_preview#enable']()
+  --   end
+  -- },
 }
 return spec

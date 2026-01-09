@@ -1,7 +1,6 @@
 return {
   {
     'Shougo/pum.vim',
-    -- commit = '22693d0',
     event = 'VeryLazy',
     config = function()
       vim.fn['pum#set_option']({
@@ -26,25 +25,20 @@ return {
       'Shougo/ddc-ui-native',
       'Shougo/ddc-ui-pum',
       'tani/ddc-fuzzy',
-      'Shougo/ddc-matcher_head',
-      'Shougo/ddc-sorter_rank',
+      'Shougo/ddc-filter-matcher_head',
+      'Shougo/ddc-filter-sorter_rank',
       'Shougo/ddc-source-around',
       -- 'Shougo/ddc-converter_remove_overlap',
-      {
-        'LumaKernel/ddc-source-file',
-        -- commit = '7233513',
-      },
+      'LumaKernel/ddc-source-file',
       'vim-skk/skkeleton',
       {
         'Shougo/ddc-source-lsp',
-        -- commit = '5b80eea',
         dependencies = {
           'uga-rosa/ddc-source-lsp-setup',
           config = function ()
             require('ddc_source_lsp_setup').setup()
           end,
         },
-        -- commit = '1c8d1b4',
         config = function()
           local capabilities = require("ddc_source_lsp").make_client_capabilities()
           vim.lsp.config('*', {

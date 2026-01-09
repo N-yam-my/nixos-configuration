@@ -17,3 +17,7 @@ fetch.github = "mattn/vim-sonictemplate"
 [denops-popup-preview-vim]
 src.git = "https://github.com/matsui54/denops-popup-preview.vim"
 fetch.github = "matsui54/denops-popup-preview.vim"
+
+[ddc-source-lsp-setup]
+src.git = "https://github.com/uga-rosa/ddc-source-lsp-setup"
+fetch.github = "uga-rosa/ddc-source-lsp-setup"
