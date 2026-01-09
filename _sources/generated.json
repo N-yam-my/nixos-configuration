@@ -1,4 +1,25 @@
 {
+    "ddc-source-lsp-setup": {
+        "cargoLocks": null,
+        "date": "2025-07-08",
+        "extract": null,
+        "name": "ddc-source-lsp-setup",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "uga-rosa",
+            "repo": "ddc-source-lsp-setup",
+            "rev": "88cf5ee67d469c61788762ba407e753e18d3fc02",
+            "sha256": "sha256-KZMZO7Tv+dIzCxIXnKsJgtz+VM2vzfq04GOMJJIu1ks=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "88cf5ee67d469c61788762ba407e753e18d3fc02"
+    },
     "denops-popup-preview-vim": {
         "cargoLocks": null,
         "date": "2025-08-11",
