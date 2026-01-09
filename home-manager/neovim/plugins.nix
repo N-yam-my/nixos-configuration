@@ -23,7 +23,7 @@ let
     inherit (sources.vimdoc-ja) pname version src;
   };
   skkeleton_indicator-nvim = pkgs.vimUtils.buildVimPlugin {
-    inherit (sources.skkeleton_indicator) pname version src;
+    inherit (sources.skkeleton_indicator-nvim) pname version src;
   };
 in
 {
