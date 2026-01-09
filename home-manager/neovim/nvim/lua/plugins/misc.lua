@@ -1,9 +1,13 @@
 -- Declare trivial plugins:
 local spec = {
   {
-    "kylechui/nvim-surround",
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    opts = {} -- this is equalent to setup({}) function
+  },
+  {
+    'numToStr/Comment.nvim',
     event = { 'VeryLazy' },
-    -- Configuration here, or leave empty to use defaults
     opts = {},
   },
   {
@@ -11,9 +15,14 @@ local spec = {
     event = { 'BufRead', 'BufNewFile' },
   },
   {
+    "kylechui/nvim-surround",
+    event = { 'VeryLazy' },
+    -- Configuration here, or leave empty to use defaults
+    opts = {},
+  },
+  {
     'lukas-reineke/indent-blankline.nvim',
     main = "ibl",
-    opts = {},
     dependencies = { 'hiphish/rainbow-delimiters.nvim' },
     event = { 'BufRead', 'BufNewFile' },
     config = function()
@@ -26,6 +35,7 @@ local spec = {
         "RainbowDelimiterViolet",
         "RainbowDelimiterCyan",
       }
+      local hooks = require "ibl.hooks"
       require("ibl").setup {
         scope = {
           highlight = highlight,
@@ -34,19 +44,11 @@ local spec = {
         --   highlight = highlight,
         -- },
       }
-      local hooks = require "ibl.hooks"
       hooks.register(
         hooks.type.SCOPE_HIGHLIGHT,
         hooks.builtin.scope_highlight_from_extmark
       )
     end
-  },
-  {
-    'numToStr/Comment.nvim',
-    event = { 'VeryLazy' },
-    config = function()
-      require('Comment').setup()
-    end,
   },
   {
     'matsui54/denops-popup-preview.vim',
@@ -55,11 +57,6 @@ local spec = {
     config = function()
       vim.fn['popup_preview#enable']()
     end
-  },
-  {
-    'windwp/nvim-autopairs',
-    event = 'InsertEnter',
-    opts = {} -- this is equalent to setup({}) function
   },
 --   {
 --     'nvim-neo-tree/neo-tree.nvim',
