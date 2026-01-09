@@ -78,12 +78,12 @@ local spec = {
   {
     'mattn/vim-sonictemplate',
     cmd = {'Template', 'Tem'},
-    -- opts = function ()
-    --   vim.g.sonictemplate_vim_template_dir = {
-    --     -- vim.fn.getenv("XDG_DATA_HOME") .. "/nvim/vim-sonictemplate/template",
-    --     vim.fn.getenv("XDG_CONFIG_HOME") .. "/vim-sonictemplate/",
-    --   }
-    -- end
+    opts = function ()
+      vim.g.sonictemplate_vim_template_dir = {
+        -- vim.fn.getenv("XDG_DATA_HOME") .. "/nvim/vim-sonictemplate/template",
+        vim.fn.getenv("HOME") .. "/.dotfiles/misc/vim-sonictemplate/",
+      }
+    end
   },
   {
     'dstein64/vim-startuptime',
