@@ -19,6 +19,7 @@
       rust-analyzer
 			tinymist
       websocat
+      typstyle
 		];
 		# Install lazy.nvim
 		plugins = with pkgs.vimPlugins; [ lazy-nvim ];

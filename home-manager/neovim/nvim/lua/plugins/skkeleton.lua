@@ -26,13 +26,13 @@ local spec = {
       { 'jk', '<Plug>(skkeleton-toggle)', mode = 'c'},
     }
   },
-  -- {
-  --   'matsui54/denops-popup-preview.vim',
-  --   dependencies = { 'vim-denops/denops.vim' },
-  --   event = 'VeryLazy',
-  --   config = function()
-  --     vim.fn['popup_preview#enable']()
-  --   end
-  -- },
+  {
+    'matsui54/denops-popup-preview.vim',
+    dependencies = { 'vim-denops/denops.vim' },
+    event = 'VeryLazy',
+    config = function()
+      vim.fn['popup_preview#enable']()
+    end
+  },
 }
 return spec
