@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   programs.zsh = {
     enable = true;
     autocd = true; # cdなしでファイルパスだけで移動
@@ -13,5 +13,6 @@
     #   ll = "eza --icons always --long --all --git ";
     #   tree = "eza --icons always --classify always --tree";
     # };
+    dotDir = "${config.xdg.configHome}/zsh";
   };
 }
