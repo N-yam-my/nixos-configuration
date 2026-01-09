@@ -7,7 +7,7 @@
 		extraPackages = with pkgs; [
       # dependencies
 			deno
-			gcc
+			# gcc
 			# tree-sitter
 
       # skk dictionaries
@@ -20,8 +20,6 @@
 			tinymist
       websocat
       typstyle
-
-      typst
 		];
 		# Install lazy.nvim
 		plugins = with pkgs.vimPlugins; [ lazy-nvim ];
