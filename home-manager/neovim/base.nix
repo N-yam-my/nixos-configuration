@@ -14,7 +14,7 @@
       skkDictionaries.l
 			skkDictionaries.law
 
-      LSPs
+      # LSPs
 			# lua-language-server
 			# tinymist
 		];
