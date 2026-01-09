@@ -48,14 +48,14 @@ local spec = {
       require('Comment').setup()
     end,
   },
-  {
-    'matsui54/denops-popup-preview.vim',
-    dependencies = { 'vim-denops/denops.vim' },
-    event = 'VeryLazy',
-    opts = function()
-      vim.fn['popup_preview#enable']()
-    end
-  },
+  -- {
+  --   'matsui54/denops-popup-preview.vim',
+  --   dependencies = { 'vim-denops/denops.vim' },
+  --   event = 'VeryLazy',
+  --   opts = function()
+  --     vim.fn['popup_preview#enable']()
+  --   end
+  -- },
   {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
