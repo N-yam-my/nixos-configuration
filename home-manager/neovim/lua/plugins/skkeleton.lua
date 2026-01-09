@@ -6,7 +6,7 @@ local spec = {
       -- { 'delphinus/skkeleton_indicator.nvim', opts = {} },
     },
     config = function()
-      local path = os.getenv("XDG_DATA_HOME")
+      local path = vim.fn.getenv("XDG_DATA_HOME")
       vim.fn['skkeleton#initialize']()
       vim.fn['skkeleton#config']({
         eggLikeNewline = true,
@@ -15,7 +15,7 @@ local spec = {
           path .. '/skk/SKK-JISYO.law',
         },
         -- usePopup = false,
-        userDictionary = os.getenv("HOME") .. "/.dotfiles/misc/skkeleton",
+        userDictionary = vim.fn.getenv("HOME") .. "/.dotfiles/misc/skkeleton",
       })
     end,
     keys = {

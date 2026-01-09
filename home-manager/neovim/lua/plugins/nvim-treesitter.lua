@@ -3,9 +3,6 @@ local spec = {
     'nvim-treesitter/nvim-treesitter',
     -- lazy = false,
     event = { 'BufRead', 'BufNewFile' },
-    -- opts = function()
-    --   vim.opt.runtimepath:append("@ts_parser_paths@")
-    -- end,
     init = function()
       vim.api.nvim_create_autocmd('FileType', {
         group = vim.api.nvim_create_augroup("vim-treesitter-start", {}),

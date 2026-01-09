@@ -1,15 +1,11 @@
 -- Declare trivial plugins:
 local spec = {
---   {
---     "kylechui/nvim-surround",
---     version = "*", -- Use for stability; omit to use `main` branch for the latest features
---     event = { 'BufRead', 'BufNewFile' },
---     config = function()
---         require("nvim-surround").setup({
---         -- Configuration here, or leave empty to use defaults
---         })
---     end
---   },
+  {
+    "kylechui/nvim-surround",
+    event = { 'VeryLazy' },
+    -- Configuration here, or leave empty to use defaults
+    opts = {},
+  },
   {
     'hiphish/rainbow-delimiters.nvim',
     event = { 'BufRead', 'BufNewFile' },
@@ -52,14 +48,14 @@ local spec = {
       require('Comment').setup()
     end,
   },
---   {
---     'matsui54/denops-popup-preview.vim',
---     dependencies = { 'vim-denops/denops.vim' },
---     event = 'VeryLazy',
---     config = function()
---       vim.fn['popup_preview#enable']()
---     end
---   },
+  {
+    'matsui54/denops-popup-preview.vim',
+    dependencies = { 'vim-denops/denops.vim' },
+    event = 'VeryLazy',
+    opts = function()
+      vim.fn['popup_preview#enable']()
+    end
+  },
   {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
@@ -79,16 +75,16 @@ local spec = {
 --       { '<leader>ft', '<cmd>Neotree toggle<cr>', desc = 'NeoTree' },
 --     },
 --   },
---   {
---     'mattn/vim-sonictemplate',
---     cmd = {'Template', 'Tem'},
---     config = function ()
---       vim.g.sonictemplate_vim_template_dir = {
---         os.getenv("XDG_DATA_HOME") .. "/nvim-data/lazy/vim-sonictemplate/template",
---         os.getenv("XDG_CONFIG_HOME") .. "/vim-sonictemplate/",
---       }
---     end
---   },
+  {
+    'mattn/vim-sonictemplate',
+    cmd = {'Template', 'Tem'},
+    -- opts = function ()
+    --   vim.g.sonictemplate_vim_template_dir = {
+    --     -- vim.fn.getenv("XDG_DATA_HOME") .. "/nvim/vim-sonictemplate/template",
+    --     vim.fn.getenv("XDG_CONFIG_HOME") .. "/vim-sonictemplate/",
+    --   }
+    -- end
+  },
   {
     'dstein64/vim-startuptime',
     -- lazy-load on a command

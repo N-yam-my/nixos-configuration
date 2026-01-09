@@ -23,33 +23,40 @@ in
   programs.neovim.extraLuaConfig =
     let
       plugins = with pkgs.vimPlugins; [
+      denops-vim
+      nvim-web-devicons
+
       tokyonight-nvim
       lualine-nvim
-      nvim-web-devicons
 
       nvim-treesitter
 
+      nvim-autopairs
       {
         name = "Comment.nvim";
         path = comment-nvim;
       }
       rainbow-delimiters-nvim
-      nvim-autopairs
+      nvim-surround
 
-      vimdoc-ja
-      vim-startuptime
-      
       skkeleton
-      denops-vim
       # {
       #   name = "skkeleton_indicator.nvim";
       #   path = skkeleton_indicator-nvim;
       # }
 
+      vim-sonictemplate
+      {
+        name = "denops-popup-preview.vim"
+        path = denops-popup-preview-vim;
+      }
       #   {
       #     name = "LuaSnip";
       #     path = luasnip;
       #   }
+
+      vimdoc-ja
+      vim-startuptime
       ];
       mkEntryFromDrv =
         drv:

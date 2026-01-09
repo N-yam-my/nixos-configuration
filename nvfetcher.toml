@@ -9,3 +9,11 @@ fetch.github = "vim-skk/skkeleton"
 [skkeleton_indicator]
 src.git = "https://github.com/delphinus/skkeleton_indicator.nvim"
 fetch.github = "delphinus/skkeleton_indicator.nvim"
+
+[vim-sonic-template]
+src.git = "https://github.com/mattn/vim-sonictemplate"
+fetch.github = "mattn/vim-sonictemplate"
+
+[denops-popup-preview-vim]
+src.git = "https://github.com/matsui54/denops-popup-preview.vim"
+fetch.github = "matsui54/denops-popup-preview.vim"
