@@ -37,8 +37,8 @@
     };
     date = "2026-01-04";
   };
-  skkeleton_indicator = {
-    pname = "skkeleton_indicator";
+  skkeleton_indicator-nvim = {
+    pname = "skkeleton_indicator-nvim";
     version = "f08532787cf842b996c8a5065be7e85cd3376c1f";
     src = fetchFromGitHub {
       owner = "delphinus";

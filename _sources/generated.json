@@ -62,11 +62,11 @@
         },
         "version": "158ae753bc5099ab12537c23152926c42b1f7c3a"
     },
-    "skkeleton_indicator": {
+    "skkeleton_indicator-nvim": {
         "cargoLocks": null,
         "date": "2025-04-30",
         "extract": null,
-        "name": "skkeleton_indicator",
+        "name": "skkeleton_indicator-nvim",
         "passthru": null,
         "pinned": false,
         "src": {
