@@ -20,6 +20,8 @@
 			tinymist
       websocat
       typstyle
+
+      typst
 		];
 		# Install lazy.nvim
 		plugins = with pkgs.vimPlugins; [ lazy-nvim ];
