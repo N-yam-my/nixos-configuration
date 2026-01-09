@@ -62,27 +62,6 @@
         },
         "version": "158ae753bc5099ab12537c23152926c42b1f7c3a"
     },
-    "skkeleton_indicator-nvim": {
-        "cargoLocks": null,
-        "date": "2025-04-30",
-        "extract": null,
-        "name": "skkeleton_indicator-nvim",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "delphinus",
-            "repo": "skkeleton_indicator.nvim",
-            "rev": "f08532787cf842b996c8a5065be7e85cd3376c1f",
-            "sha256": "sha256-6pQdj7EcPZ5/F34Y6SERRxcgKO6KLVH/94Th78ucn2Y=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "f08532787cf842b996c8a5065be7e85cd3376c1f"
-    },
     "vim-sonictemplate": {
         "cargoLocks": null,
         "date": "2025-07-02",

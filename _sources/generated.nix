@@ -37,18 +37,6 @@
     };
     date = "2026-01-04";
   };
-  skkeleton_indicator-nvim = {
-    pname = "skkeleton_indicator-nvim";
-    version = "f08532787cf842b996c8a5065be7e85cd3376c1f";
-    src = fetchFromGitHub {
-      owner = "delphinus";
-      repo = "skkeleton_indicator.nvim";
-      rev = "f08532787cf842b996c8a5065be7e85cd3376c1f";
-      fetchSubmodules = false;
-      sha256 = "sha256-6pQdj7EcPZ5/F34Y6SERRxcgKO6KLVH/94Th78ucn2Y=";
-    };
-    date = "2025-04-30";
-  };
   vim-sonictemplate = {
     pname = "vim-sonictemplate";
     version = "e4b040b67e46f591efe35fbd2a3be8d2a792f47f";
