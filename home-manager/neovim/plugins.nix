@@ -73,7 +73,7 @@ in
           drv;
       lazyPath = pkgs.linkFarm "lazy-plugins" (builtins.map mkEntryFromDrv plugins);
       lazyConfig = substituteStrings {
-        file = ./init.lua;
+        file = ./nvim/init.lua;
         replacements = [
           {
             old = "@lazyPath@";
