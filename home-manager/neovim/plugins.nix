@@ -1,7 +1,6 @@
 {
   pkgs,
   lib,
-  # config,
   sources,
   ...
 }:
@@ -23,7 +22,6 @@ let
   # skkeleton_indicator-nvim = pkgs.vimUtils.buildVimPlugin {
   #   inherit (sources.skkeleton_indicator) pname version src;
   # };
-  # inherit (config.lib.file) mkOutOfStoreSymlink
 in
 {
   programs.neovim.extraLuaConfig =
@@ -87,11 +85,4 @@ in
     ''
       ${lazyConfig}
     '';
-
-  xdg.dataFile = {
-    "skk/SKK-JISYO.L".source = "${pkgs.skkDictionaries.l}/share/skk/SKK-JISYO.L";
-    "skk/SKK-JISYO.law".source = "${pkgs.skkDictionaries.law}/share/skk/SKK-JISYO.law";
-    # "skk/skkeleton".source = mkOutOfStoreSymlink "${builtins.toString config.home.homeDirectory}/.dotfiles/misc/skkeleton"
-    "nvim/site/queries".source ="${pkgs.vimPlugins.nvim-treesitter}/runtime/queries";
-  };
 }

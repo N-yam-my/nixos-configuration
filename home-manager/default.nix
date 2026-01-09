@@ -1,3 +1,4 @@
+{ ... }:
 {
   home = rec {
     username = "nyammy";
