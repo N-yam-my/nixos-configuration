@@ -15,8 +15,10 @@
 			skkDictionaries.law
 
       # LSPs
-			# lua-language-server
-			# tinymist
+			lua-language-server
+      rust-analyzer
+			tinymist
+      websocat
 		];
 		# Install lazy.nvim
 		plugins = with pkgs.vimPlugins; [ lazy-nvim ];
