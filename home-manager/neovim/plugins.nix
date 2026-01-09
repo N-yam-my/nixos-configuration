@@ -29,6 +29,10 @@ in
 
       nvim-treesitter
 
+      {
+        name = "Comment.nvim";
+        path = comment-nvim;
+      }
       rainbow-delimiters-nvim
       nvim-autopairs
 

@@ -45,13 +45,13 @@ local spec = {
 --       )
 --     end
 --   },
---   {
---     'numToStr/Comment.nvim',
---     event = { 'BufRead', 'BufNewFile' },
---     config = function()
---       require('Comment').setup()
---     end,
---   },
+  {
+    'numToStr/Comment.nvim',
+    event = { 'BufRead', 'BufNewFile' },
+    config = function()
+      require('Comment').setup()
+    end,
+  },
 --   {
 --     'matsui54/denops-popup-preview.vim',
 --     dependencies = { 'vim-denops/denops.vim' },
