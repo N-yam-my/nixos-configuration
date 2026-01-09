@@ -14,8 +14,8 @@ return {
         -- invert_colors = '{ "rest": "always", "image": "never" }',
         -- follow_cursor = false,
         dependencies_bin = {
-          ['tinymist'] = "",
-          ['websocat'] = ""
+          ['tinymist'] = "tinymist",
+          ['websocat'] = "websocat"
         },
       }
     end
