@@ -10,52 +10,52 @@ local spec = {
     'hiphish/rainbow-delimiters.nvim',
     event = { 'BufRead', 'BufNewFile' },
   },
---   {
---     'lukas-reineke/indent-blankline.nvim',
---     main = "ibl",
---     opts = {},
---     dependencies = { 'hiphish/rainbow-delimiters.nvim' },
---     event = { 'BufRead', 'BufNewFile' },
---     config = function()
---       local highlight = {
---         "RainbowDelimiterRed",
---         "RainbowDelimiterYellow",
---         "RainbowDelimiterBlue",
---         "RainbowDelimiterOrange",
---         "RainbowDelimiterGreen",
---         "RainbowDelimiterViolet",
---         "RainbowDelimiterCyan",
---       }
---       require("ibl").setup {
---         scope = {
---           highlight = highlight,
---         },
---         -- indent = {
---         --   highlight = highlight,
---         -- },
---       }
---       local hooks = require "ibl.hooks"
---       hooks.register(
---         hooks.type.SCOPE_HIGHLIGHT,
---         hooks.builtin.scope_highlight_from_extmark
---       )
---     end
---   },
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    main = "ibl",
+    opts = {},
+    dependencies = { 'hiphish/rainbow-delimiters.nvim' },
+    event = { 'BufRead', 'BufNewFile' },
+    config = function()
+      local highlight = {
+        "RainbowDelimiterRed",
+        "RainbowDelimiterYellow",
+        "RainbowDelimiterBlue",
+        "RainbowDelimiterOrange",
+        "RainbowDelimiterGreen",
+        "RainbowDelimiterViolet",
+        "RainbowDelimiterCyan",
+      }
+      require("ibl").setup {
+        scope = {
+          highlight = highlight,
+        },
+        -- indent = {
+        --   highlight = highlight,
+        -- },
+      }
+      local hooks = require "ibl.hooks"
+      hooks.register(
+        hooks.type.SCOPE_HIGHLIGHT,
+        hooks.builtin.scope_highlight_from_extmark
+      )
+    end
+  },
   {
     'numToStr/Comment.nvim',
-    event = { 'BufRead', 'BufNewFile' },
+    event = { 'VeryLazy' },
     config = function()
       require('Comment').setup()
     end,
   },
-  -- {
-  --   'matsui54/denops-popup-preview.vim',
-  --   dependencies = { 'vim-denops/denops.vim' },
-  --   event = 'VeryLazy',
-  --   opts = function()
-  --     vim.fn['popup_preview#enable']()
-  --   end
-  -- },
+  {
+    'matsui54/denops-popup-preview.vim',
+    dependencies = { 'vim-denops/denops.vim' },
+    event = 'VeryLazy',
+    config = function()
+      vim.fn['popup_preview#enable']()
+    end
+  },
   {
     'windwp/nvim-autopairs',
     event = 'InsertEnter',
@@ -72,7 +72,7 @@ local spec = {
 --     branch = 'v3.x',
 --     cmd = 'Neotree',
 --     keys = {
---       { '<leader>ft', '<cmd>Neotree toggle<cr>', desc = 'NeoTree' },
+--       { '<leader>ft', '<cmd>Neotree toggle<CR>', desc = 'NeoTree' },
 --     },
 --   },
   {
@@ -94,7 +94,11 @@ local spec = {
       vim.g.startuptime_tries = 10
     end,
   },
-  { 'vim-jp/vimdoc-ja', keys = { { 'h', mode = 'c' } } },
+  {
+    'vim-jp/vimdoc-ja',
+    event = {  'BufRead', 'BufNewFile' },
+    keys = { { 'h', mode = 'c' } }
+  },
 --   -- { 'vimsence/vimsence', event = 'CursorHold' }
 }
 return spec

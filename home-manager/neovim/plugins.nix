@@ -41,6 +41,7 @@ in
         name = "Comment.nvim";
         path = comment-nvim;
       }
+      indent-blankline-nvim
       rainbow-delimiters-nvim
       nvim-surround
 
