@@ -8,6 +8,12 @@
 let
   substituteStrings = import ../../lib/substituteStrings.nix;
 
+  vim-sonictemplate = pkgs.vimUtils.buildVimPlugin {
+    inherit (sources.vim-sonictemplate) pname version src;
+  };
+  denops-popup-preview-vim = pkgs.vimUtils.buildVimPlugin {
+    inherit (sources.denops-popup-preview-vim) pname version src;
+  };
   vimdoc-ja = pkgs.vimUtils.buildVimPlugin {
     inherit (sources.vimdoc-ja) pname version src;
   };
