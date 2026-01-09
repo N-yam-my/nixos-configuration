@@ -6,9 +6,9 @@ fetch.github = "vim-jp/vimdoc-ja"
 src.git = "https://github.com/vim-skk/skkeleton"
 fetch.github = "vim-skk/skkeleton"
 
-# [skkeleton_indicator-nvim]
-# src.git = "https://github.com/delphinus/skkeleton_indicator.nvim"
-# fetch.github = "delphinus/skkeleton_indicator.nvim"
+[skkeleton_indicator-nvim]
+src.git = "https://github.com/delphinus/skkeleton_indicator.nvim"
+fetch.github = "delphinus/skkeleton_indicator.nvim"
 
 [vim-sonictemplate]
 src.git = "https://github.com/mattn/vim-sonictemplate"
