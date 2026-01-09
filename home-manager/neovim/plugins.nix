@@ -47,7 +47,7 @@ in
 
       vim-sonictemplate
       {
-        name = "denops-popup-preview.vim"
+        name = "denops-popup-preview.vim";
         path = denops-popup-preview-vim;
       }
       #   {
