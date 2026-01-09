@@ -7,10 +7,9 @@ $ cd ~/.dotfiles
 $ sudo nixos-rebuild switch --extra-experimental-features 'flakes nix-command' --flake .#nyammy --show-trace
 ```
 # Commands
-## nixos modules
+## nixos modules; for global level
 if flakes not enabled:
 ```shell-session
-$ cd ~/.dotfiles
 $ sudo nixos rebuild switch
 ```
 if flakes enabled:
@@ -19,13 +18,13 @@ $ cd ~/.dotfiles
 $ git add .
 $ sudo nixos rebuild switch --flake .#G83HS
 ```
-## home-manager
+## home-manager; for user level
 ```shell-session
 $ cd ~/.dotfiles
 $ git add .
 $ home-manager switch --flake .#nyammy
 ```
-## nvfetcher
+## nvfetcher; for plugins not included in nixpkgs
 ```shell-session
 $ nix run nixpkgs#nvfetcher --  --commit-changes
 $ git push origin main
