@@ -37,8 +37,8 @@
     };
     date = "2025-04-30";
   };
-  vim-sonic-template = {
-    pname = "vim-sonic-template";
+  vim-sonictemplate = {
+    pname = "vim-sonictemplate";
     version = "e4b040b67e46f591efe35fbd2a3be8d2a792f47f";
     src = fetchFromGitHub {
       owner = "mattn";

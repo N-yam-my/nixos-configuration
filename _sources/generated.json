@@ -62,11 +62,11 @@
         },
         "version": "f08532787cf842b996c8a5065be7e85cd3376c1f"
     },
-    "vim-sonic-template": {
+    "vim-sonictemplate": {
         "cargoLocks": null,
         "date": "2025-07-02",
         "extract": null,
-        "name": "vim-sonic-template",
+        "name": "vim-sonictemplate",
         "passthru": null,
         "pinned": false,
         "src": {
