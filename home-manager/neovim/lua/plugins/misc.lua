@@ -78,7 +78,7 @@ local spec = {
   {
     'mattn/vim-sonictemplate',
     cmd = {'Template', 'Tem'},
-    opts = function()
+    config = function()
       vim.g.sonictemplate_vim_template_dir = {
         -- vim.fn.getenv("XDG_DATA_HOME") .. "/nvim/vim-sonictemplate/template",
         vim.fn.getenv("HOME") .. "/.dotfiles/misc/vim-sonictemplate/",
