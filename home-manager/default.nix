@@ -10,6 +10,7 @@
 		./git.nix
 		./zsh.nix
 		./neovim
+    ./typst.nix
 	];
   xdg.enable = true;
   programs.home-manager.enable = true;
