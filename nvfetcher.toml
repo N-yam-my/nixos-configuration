@@ -10,7 +10,7 @@ fetch.github = "vim-skk/skkeleton"
 src.git = "https://github.com/delphinus/skkeleton_indicator.nvim"
 fetch.github = "delphinus/skkeleton_indicator.nvim"
 
-[vim-sonic-template]
+[vim-sonictemplate]
 src.git = "https://github.com/mattn/vim-sonictemplate"
 fetch.github = "mattn/vim-sonictemplate"
 
