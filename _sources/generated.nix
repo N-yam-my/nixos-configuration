@@ -39,13 +39,13 @@
   };
   skkeleton_indicator-nvim = {
     pname = "skkeleton_indicator-nvim";
-    version = "4176d4017e44e8fb60e241868e2bd28eea75761a";
+    version = "bf697ad1e9798eac098ce2687da1b5a994710a31";
     src = fetchFromGitHub {
       owner = "N-yam-my";
       repo = "skkeleton_indicator.nvim";
-      rev = "4176d4017e44e8fb60e241868e2bd28eea75761a";
+      rev = "bf697ad1e9798eac098ce2687da1b5a994710a31";
       fetchSubmodules = false;
-      sha256 = "sha256-7AVZp6oMlpCinDAct+TfceOl7KlqQgDDN6cJ3ZLPrTY=";
+      sha256 = "sha256-bQ/LCwXnYxrAqHfYpEY2qNslD3znklWp4HaTGRyFE3M=";
     };
     date = "2026-01-09";
   };
