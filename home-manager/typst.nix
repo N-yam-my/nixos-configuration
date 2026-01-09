@@ -1,12 +1,10 @@
 { pkgs, config, ... }:
 let
   inherit (config.lib.file) mkOutOfStoreSymlink;
-  local = "${config.home.homeDirectory}/.dotfiles/misc/typst/packages/local";
+  misc = "${config.home.homeDirectory}/.dotfiles/misc";
 in
 {
   xdg.dataFile = {
-    "typst/packages/local/myStyle".source = mkOutOfStoreSymlink "${local}/myStyle";
-    "typst/packages/local/myPackages".source = mkOutOfStoreSymlink "${local}/myPackages";
-    "typst/packages/local/myUtils".source = mkOutOfStoreSymlink "${local}/myUtils";
+    "typst".source = mkOutOfStoreSymlink "${misc}/typst";
   };
 }
