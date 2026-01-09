@@ -5,8 +5,8 @@ let
 in
 {
   xdg.dataFile = {
-    "typst/package/local/myStyle".source = mkOutOfStoreSymlink "${local}/myStyle";
-    "typst/package/local/myPackages".source = mkOutOfStoreSymlink "${local}/myPackages";
-    "typst/package/local/myUtils".source = mkOutOfStoreSymlink "${local}/myUtils";
+    "typst/packages/local/myStyle".source = mkOutOfStoreSymlink "${local}/myStyle";
+    "typst/packages/local/myPackages".source = mkOutOfStoreSymlink "${local}/myPackages";
+    "typst/packages/local/myUtils".source = mkOutOfStoreSymlink "${local}/myUtils";
   };
 }
