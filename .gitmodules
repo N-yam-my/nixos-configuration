@@ -1,0 +1,3 @@
+[submodule "misc/typst"]
+	path = misc/typst
+	url = https://github.com/N-yam-my/typst-local-packages.git
