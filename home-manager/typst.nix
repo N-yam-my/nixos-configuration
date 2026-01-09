@@ -4,5 +4,5 @@ let
   misc = "${config.home.homeDirectory}/.dotfiles/misc";
 in
 {
-  xdg.dataFile."typst".source = mkOutOfStoreSymlink "${misc}/typst"
+  xdg.dataFile."typst".source = mkOutOfStoreSymlink "${misc}/typst";
 }
