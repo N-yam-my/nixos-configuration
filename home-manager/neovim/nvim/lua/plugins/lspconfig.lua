@@ -27,6 +27,9 @@ return {
         end,
       })
       -- vim.lsp.enable('lemminx', {})
+      vim.diagnostic.config({
+        virtual_text = true,
+      })
     end
   },
 }
