@@ -1,7 +1,6 @@
 local spec = {
   {
     'Shougo/pum.vim',
-    event = 'VeryLazy',
     config = function()
       vim.fn['pum#set_option']({
         auto_confirm_time = 500,
@@ -16,12 +15,20 @@ local spec = {
     end
   },
   {
+    'matsui54/denops-popup-preview.vim',
+    dependencies = { 'vim-denops/denops.vim' },
+    event = 'VeryLazy',
+    config = function()
+      vim.fn['popup_preview#enable']()
+    end
+  },
+  {
     'Shougo/ddc.vim',
     event = 'VeryLazy',
     dependencies = {
       'vim-denops/denops.vim',
       'Shougo/pum.vim',
-      'Shougo/ddc-ui-native',
+      -- 'Shougo/ddc-ui-native',
       'Shougo/ddc-ui-pum',
       'tani/ddc-fuzzy',
       'Shougo/ddc-source-around',
@@ -50,9 +57,10 @@ local spec = {
     },
     config = function()
       vim.fn['ddc#custom#patch_global']({
+        backspaceCompletion = true,-- if screen flickers, set false.
         -- ui = 'native',
         ui = 'pum',
-        backspaceCompletion = true,-- if screen flickers, set false.
+        uiParams = { insert = true, },
         sources = { 'skkeleton', 'lsp', 'file', 'around', },
         sourceOptions = {
           _ = {
@@ -69,7 +77,6 @@ local spec = {
             minAutoCompleteLength = 1,
           },
           lsp = {
-            dup = 'keep',
             keywordPattern = '\\k+',
             mark = 'LSP',
             -- matchers = { 'matcher_head' },
@@ -93,7 +100,7 @@ local spec = {
         sourceParams = {
           around = { maxSize = 500 },
           lsp = {
-            -- confirmBehavior = 'insert',
+            confirmBehavior = 'insert',
             enableResolveItem = true,
             enableAdditonalTextedit = true,
             lspengine = 'nvim-lsp',
