@@ -17,6 +17,6 @@
     #   tree = "eza --icons always --classify always --tree";
     # };
     dotDir = "${config.xdg.configHome}/zsh";
-    envExtra = builtins.readfile ./zsh-history.sh;
+    envExtra = builtins.readFile ./zsh-history.sh;
   };
 }
