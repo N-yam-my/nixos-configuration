@@ -39,14 +39,15 @@ in
   programs.neovim.extraLuaConfig =
     let
       plugins = with pkgs.vimPlugins; [
+      # dependencies
       denops-vim
       nvim-web-devicons
 
+      # Visual
       tokyonight-nvim
       lualine-nvim
 
       nvim-treesitter
-      nvim-lspconfig
 
       nvim-autopairs
       {
@@ -57,15 +58,17 @@ in
       rainbow-delimiters-nvim
       nvim-surround
 
+      # skkeleton 
       skkeleton
       {
         name = "skkeleton_indicator.nvim";
         path = skkeleton_indicator-nvim;
       }
 
+      # completion
       pum-vim
       ddc-vim
-      ddc-ui-native
+      # ddc-ui-native
       ddc-ui-pum
       ddc-fuzzy
       ddc-filter-matcher_head
@@ -77,20 +80,24 @@ in
       ddc-filter-matcher_prefix
       ddc-filter-sorter_lsp_kind
       ddc-filter-converter_kind_labels
-      vim-sonictemplate
       {
         name = "denops-popup-preview.vim";
         path = denops-popup-preview-vim;
       }
+      # snippet
       #   {
       #     name = "LuaSnip";
       #     path = luasnip;
       #   }
 
-      typst-preview-nvim
-
+      # utility
+      nvim-lspconfig
+      vim-sonictemplate
       vimdoc-ja
       vim-startuptime
+
+      # filetype
+      typst-preview-nvim
       ];
       mkEntryFromDrv =
         drv:
