@@ -1,3 +1,4 @@
+autoload -Uz add-zsh-hook
 # https://gist.github.com/danydev/4ca4f5c523b19b17e9053dfa9feb246d
 # README: This allows you to store in your history file only commands
 # with a successful status (or forced exited by you with signal 2).
