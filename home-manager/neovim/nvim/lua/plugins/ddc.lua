@@ -1,4 +1,4 @@
-return {
+local spec = {
   {
     'Shougo/pum.vim',
     event = 'VeryLazy',
@@ -235,3 +235,4 @@ return {
     }
   },
 }
+return spec
