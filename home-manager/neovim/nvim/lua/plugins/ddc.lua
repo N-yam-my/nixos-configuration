@@ -18,18 +18,19 @@ return {
   {
     'Shougo/ddc.vim',
     event = 'VeryLazy',
-    -- commit = '72ca214',
     dependencies = {
       'vim-denops/denops.vim',
       'Shougo/pum.vim',
       'Shougo/ddc-ui-native',
       'Shougo/ddc-ui-pum',
       'tani/ddc-fuzzy',
+      'Shougo/ddc-source-around',
+      'LumaKernel/ddc-source-file',
       'Shougo/ddc-filter-matcher_head',
       'Shougo/ddc-filter-sorter_rank',
-      'Shougo/ddc-source-around',
+      'Shougo/ddc-filter-sorter_lsp_kind',
+      'Shougo/ddc-filter-converter_kind_labels',
       -- 'Shougo/ddc-converter_remove_overlap',
-      'LumaKernel/ddc-source-file',
       'vim-skk/skkeleton',
       {
         'Shougo/ddc-source-lsp',
@@ -47,7 +48,6 @@ return {
         end,
       },
     },
-    -- event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       vim.fn['ddc#custom#patch_global']({
         -- ui = 'native',
@@ -69,11 +69,12 @@ return {
             minAutoCompleteLength = 1,
           },
           lsp = {
-            isVolatile = true,
             mark = 'LSP',
+            matchers = { 'matcher_head' },
+            sorters = { 'sorter_lsp_kind' },
+            converters = { 'converter_kind_labels' },
+            isVolatile = true,
             forceCompletionPattern = {[['\.\w*|:\w*|->\w*']]},
-            -- sorters = { 'sorter_lsp-kind' },
-            -- converters = { 'converter_kind_labels' },
             minAutoCompleteLength = 2,
           },
           file = {
@@ -90,16 +91,19 @@ return {
         sourceParams = {
           around = { maxSize = 500 },
           lsp = {
-            confirmBehavior = 'insert',
-            -- enableResolveItem = true,
+            -- confirmBehavior = 'insert',
+            enableResolveItem = true,
             enableAdditonalTextedit = true,
             lspengine = 'nvim-lsp',
-            snippetEngine = vim.fn['denops#callback#register'](function(body)
-                require('luasnip').lsp_expand(body)
-              end),
+            -- snippetEngine = vim.fn['denops#callback#register'](function(body)
+            --     require('luasnip').lsp_expand(body)
+            --   end),
           },
         },
 	      filterParams = {
+          converter_fuzzy = {
+            hlGroup = 'SpellBad',
+          },
 	        converter_kind_labels = {
 	          kindLabels = {
 	            Text =  "",

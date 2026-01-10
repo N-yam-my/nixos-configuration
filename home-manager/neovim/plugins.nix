@@ -10,6 +10,12 @@ let
   ddc-source-lsp-setup = pkgs.vimUtils.buildVimPlugin {
     inherit (sources.ddc-source-lsp-setup) pname version src;
   };
+  ddc-filter-sorter_lsp_kind = pkgs.vimUtils.buildVimPlugin {
+    inherit (sources.ddc-filter-sorter_lsp_kind) pname version src;
+  };
+  ddc-filter-converter_kind_labels = pkgs.vimUtils.buildVimPlugin {
+    inherit (sources.ddc-filter-converter_kind_labels) pname version src;
+  };
   skkeleton = pkgs.vimUtils.buildVimPlugin {
     inherit (sources.skkeleton) pname version src;
   };
@@ -65,6 +71,8 @@ in
       ddc-source-file
       ddc-source-lsp
       ddc-source-lsp-setup
+      ddc-filter-sorter_lsp_kind
+      ddc-filter-converter_kind_labels
       vim-sonictemplate
       {
         name = "denops-popup-preview.vim";

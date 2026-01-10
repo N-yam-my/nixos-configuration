@@ -21,3 +21,12 @@ fetch.github = "matsui54/denops-popup-preview.vim"
 [ddc-source-lsp-setup]
 src.git = "https://github.com/uga-rosa/ddc-source-lsp-setup"
 fetch.github = "uga-rosa/ddc-source-lsp-setup"
+
+[ddc-filter-converter_kind_labels]
+src.git = "https://github.com/Shougo/ddc-filterconverter_kind_labels"
+fetch.github = "Shougo/ddc-filterconverter_kind_labels"
+
+[ddc-filter-sorter_lsp_kind]
+src.git = "https://github.com/Shougo/ddc-filter-sorter_lsp_kind"
+fetch.github = "Shougo/ddc-filter-sorter_lsp_kind"
+
