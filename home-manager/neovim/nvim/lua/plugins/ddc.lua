@@ -4,12 +4,12 @@ local spec = {
     config = function()
       vim.fn['pum#set_option']({
         -- auto_confirm_time = 500,
-        auto_select = false,
+        auto_select = true,
         border = 'single',
-        follow_cursor = true,
+        -- follow_cursor = true,
         -- padding = true,
         -- highlight_matches = 'SpellBad',
-        -- preview = true,
+        preview = false,
         -- preview_delay = 500,
       })
     end
@@ -61,12 +61,12 @@ local spec = {
         backspaceCompletion = true,-- if screen flickers, set false.
         -- ui = 'native',
         ui = 'pum',
-        uiParams = { insert = true, },
+        -- uiParams = { insert = true, },
         sources = { 'skkeleton', 'lsp', 'file', 'around', },
         sourceOptions = {
           _ = {
             matchers = { 'matcher_fuzzy', 'matcher_prefix' },
-            sorters = { 'sorter_fuzzy' },
+            sorters = { 'sorter_fuzzy' , 'sorter_rank' },
             converters = { 'converter_fuzzy' },
           },
           skkeleton = {
@@ -79,7 +79,7 @@ local spec = {
             maxItems = 25,
           },
           lsp = {
-            -- keywordPattern = '\\k+',
+            keywordPattern = '\\k+',
             mark = 'LSP',
             -- matchers = { 'matcher_head' },
             sorters = { 'sorter_lsp_kind' },
@@ -105,13 +105,15 @@ local spec = {
         sourceParams = {
           around = { maxSize = 500 },
           lsp = {
-            confirmBehavior = 'insert',
+            -- confirmBehavior = 'insert',
             enableResolveItem = true,
             enableAdditonalTextedit = true,
             lspengine = 'nvim-lsp',
-            -- snippetEngine = vim.fn['denops#callback#register'](function(body)
-            --     require('luasnip').lsp_expand(body)
-            --   end),
+            snippetEngine = vim.fn['denops#callback#register'](
+              function(body)
+                require('luasnip').lsp_expand(body)
+              end
+            ),
           },
         },
 	      filterParams = {
@@ -195,7 +197,7 @@ local spec = {
           vim.fn['ddc#map#manual_complete']()
           return ''
         end,
-        mode = 'i', { noremap = true, silent = true, expr = false },
+        mode = 'i', { noremap = false, silent = true, expr = false },
         desc = "Completion",
       },
       {
@@ -209,7 +211,7 @@ local spec = {
           -- Else: insert <S-Tab>
           local key = vim.api.nvim_replace_termcodes('<S-Tab>', true, false, true)
           return vim.api.nvim_feedkeys(key, 'n', false)
-        end, mode = 'i', { noremap = true, silent = true, expr = false },
+        end, mode = 'i', { noremap = false, silent = true, expr = false },
         desc = "Completion back",
       },
       {
@@ -225,20 +227,8 @@ local spec = {
           local key = require('nvim-autopairs').autopairs_cr()
           return vim.api.nvim_feedkeys(key, 'in', true)
         end,
-        mode = 'i', { noremap = true, expr = false },
+        mode = 'i', { noremap = false, expr = false },
         desc = 'Confirm completion',
-      },
-      {
-        '<C-k>',
-        function ()
-          if vim.fn['pum#visible']() == true then
-            vim.fn['pum#map#confirm']()
-            return ''
-          end
-          local key = vim.api.nvim_replace_termcodes('<C-k>', true, false, true)
-          return vim.api.nvim_feedkeys(key, 'n', false)
-        end,
-        mode = 'i', { noremap = true, expr = false },
       },
       -- Go to top / bottom of the menu with <Home> / <End>.
       -- {
