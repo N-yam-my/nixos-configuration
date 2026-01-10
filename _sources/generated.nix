@@ -13,6 +13,18 @@
     };
     date = "2025-09-07";
   };
+  ddc-filter-matcher_prefix = {
+    pname = "ddc-filter-matcher_prefix";
+    version = "76c5b1f0eec7263ad56bc40e4811a88faf1a3874";
+    src = fetchFromGitHub {
+      owner = "Shougo";
+      repo = "ddc-filter-matcher_prefix";
+      rev = "76c5b1f0eec7263ad56bc40e4811a88faf1a3874";
+      fetchSubmodules = false;
+      sha256 = "sha256-l2lHrFI1A5P4p+xno3dgme9kF7KeDU1kdBlrNOakraU=";
+    };
+    date = "2025-09-02";
+  };
   ddc-filter-sorter_lsp_kind = {
     pname = "ddc-filter-sorter_lsp_kind";
     version = "2d082e521f6e0f8d452ad737145315606eaec532";
