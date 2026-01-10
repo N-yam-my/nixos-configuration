@@ -84,11 +84,12 @@ in
         name = "denops-popup-preview.vim";
         path = denops-popup-preview-vim;
       }
+
       # snippet
-      #   {
-      #     name = "LuaSnip";
-      #     path = luasnip;
-      #   }
+        {
+          name = "LuaSnip";
+          path = luasnip;
+        }
 
       # utility
       nvim-lspconfig
