@@ -8,9 +8,9 @@
 	imports = [
 		./gc.nix
 		./git.nix
-		./zsh.nix
 		./neovim
     ./typst.nix
+		./zsh
 	];
   xdg.enable = true;
   programs.home-manager.enable = true;

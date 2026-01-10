@@ -3,7 +3,10 @@
     enable = true;
     autocd = true; # cdなしでファイルパスだけで移動
     enableCompletion = true; # 自動補完
-    autosuggestion.enable = true; # 入力サジェスト
+    autosuggestion  = {
+      enable = true; # 入力サジェスト
+      strategy = [ "match_prev_cmd" ];
+    };
     syntaxHighlighting.enable = true; # シンタックスハイライト
     # shellAliases = {
     #   cat = "bat";
@@ -14,5 +17,6 @@
     #   tree = "eza --icons always --classify always --tree";
     # };
     dotDir = "${config.xdg.configHome}/zsh";
+    envExtra = builtins.readfile ./zsh-history.sh
   };
 }
