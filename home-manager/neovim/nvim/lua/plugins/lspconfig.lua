@@ -3,8 +3,9 @@ return {
     'neovim/nvim-lspconfig',
     event = {'BufReadPre', 'BufNewFile', },
     config = function()
-      vim.lsp.enable('lua_ls', {})
-      vim.lsp.enable('rust_analyzer', {})
+      vim.lsp.enable('lua_ls')
+      vim.lsp.enable('nixd')
+      vim.lsp.enable('rust_analyzer')
       vim.lsp.config('tinymist', {
         settings = {
           -- tinymist = {

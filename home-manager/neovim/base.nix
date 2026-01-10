@@ -16,6 +16,7 @@
 
       # LSPs
 			lua-language-server
+      nixd
       rust-analyzer
 			tinymist
       websocat
