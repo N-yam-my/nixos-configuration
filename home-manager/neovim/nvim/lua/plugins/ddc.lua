@@ -31,7 +31,6 @@ return {
       'Shougo/ddc-filter-sorter_rank',
       'Shougo/ddc-filter-sorter_lsp_kind',
       'Shougo/ddc-filter-converter_kind_labels',
-      -- 'Shougo/ddc-converter_remove_overlap',
       'vim-skk/skkeleton',
       {
         'Shougo/ddc-source-lsp',
@@ -71,7 +70,7 @@ return {
           },
           lsp = {
             mark = 'LSP',
-            matchers = { 'matcher_head' },
+            -- matchers = { 'matcher_head' },
             sorters = { 'sorter_lsp_kind' },
             converters = { 'converter_kind_labels' },
             isVolatile = true,
@@ -81,7 +80,7 @@ return {
           file = {
             mark = 'F',
             isVolatile = true,
-            minAutoCompleteLength = 1000,
+            minAutoCompleteLength = 4,
             forceCompletionPattern = {[['\S/\S*']]},
           },
           around = {
