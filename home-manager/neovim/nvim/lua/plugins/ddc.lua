@@ -52,7 +52,7 @@ local spec = {
       vim.fn['ddc#custom#patch_global']({
         -- ui = 'native',
         ui = 'pum',
-        -- backspaceCompletion = false,
+        backspaceCompletion = true,-- if screen flickers, set false.
         sources = { 'skkeleton', 'lsp', 'file', 'around', },
         sourceOptions = {
           _ = {
@@ -69,6 +69,8 @@ local spec = {
             minAutoCompleteLength = 1,
           },
           lsp = {
+            dup = 'keep',
+            keywordPattern = '\\k+',
             mark = 'LSP',
             -- matchers = { 'matcher_head' },
             sorters = { 'sorter_lsp_kind' },
