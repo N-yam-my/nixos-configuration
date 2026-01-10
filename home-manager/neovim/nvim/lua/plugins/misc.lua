@@ -18,8 +18,11 @@ local spec = {
   },
   {
     'windwp/nvim-autopairs',
-    event = 'InsertEnter',
-    opts = {} -- this is equalent to setup({}) function
+    -- see ddc.vim (<CR> mapping)
+    opts = {
+        check_ts = true,
+        map_cr = false,
+    },
   },
   {
     'numToStr/Comment.nvim',
