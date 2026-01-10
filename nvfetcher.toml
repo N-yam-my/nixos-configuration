@@ -29,3 +29,7 @@ fetch.github = "Shougo/ddc-filter-converter_kind_labels"
 [ddc-filter-sorter_lsp_kind]
 src.git = "https://github.com/Shougo/ddc-filter-sorter_lsp_kind"
 fetch.github = "Shougo/ddc-filter-sorter_lsp_kind"
+
+[ddc-filter-matcher_prefix]
+src.git = "https://github.com/Shougo/ddc-filter-matcher_prefix"
+fetch.github = "Shougo/ddc-filter-matcher_prefix"

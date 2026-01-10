@@ -27,6 +27,7 @@ return {
       'Shougo/ddc-source-around',
       'LumaKernel/ddc-source-file',
       'Shougo/ddc-filter-matcher_head',
+      'Shougo/ddc-filter-matcher_prefix',
       'Shougo/ddc-filter-sorter_rank',
       'Shougo/ddc-filter-sorter_lsp_kind',
       'Shougo/ddc-filter-converter_kind_labels',
@@ -56,7 +57,7 @@ return {
         sources = { 'skkeleton', 'lsp', 'file', 'around', },
         sourceOptions = {
           _ = {
-            matchers = { 'matcher_fuzzy' },
+            matchers = { 'matcher_fuzzy', 'matcher_prefix' },
             sorters = { 'sorter_fuzzy' },
             converters = { 'converter_fuzzy' },
           },

@@ -10,6 +10,9 @@ let
   ddc-source-lsp-setup = pkgs.vimUtils.buildVimPlugin {
     inherit (sources.ddc-source-lsp-setup) pname version src;
   };
+  ddc-filter-matcher_prefix = pkgs.vimUtils.buildVimPlugin {
+    inherit (sources.ddc-filter-matcher_prefix) pname version src;
+  };
   ddc-filter-sorter_lsp_kind = pkgs.vimUtils.buildVimPlugin {
     inherit (sources.ddc-filter-sorter_lsp_kind) pname version src;
   };
@@ -71,6 +74,7 @@ in
       ddc-source-file
       ddc-source-lsp
       ddc-source-lsp-setup
+      ddc-filter-matcher_prefix
       ddc-filter-sorter_lsp_kind
       ddc-filter-converter_kind_labels
       vim-sonictemplate
