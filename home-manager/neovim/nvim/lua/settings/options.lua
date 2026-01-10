@@ -26,7 +26,10 @@ local options = {
   -- Search
   hlsearch = true,
   -- Completetion
-  completeopt = "menuone,noinsert"
+  completeopt = {
+    'menuone',
+    'noinsert',
+  },
 }
 for key, value in pairs(options) do
 	vim.opt[key] = value
