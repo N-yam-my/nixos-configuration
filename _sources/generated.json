@@ -104,6 +104,21 @@
         },
         "version": "6ba396dfb6321b2d5a0f6782823d6e588089e596"
     },
+    "moralerspace": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "moralerspace",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-UAp3dCl8gpJl69RyttjBFZz7Pp2qTKBXAXCvVBuZG30=",
+            "type": "url",
+            "url": "https://github.com/yuru7/moralerspace/releases/download/v2.0.0/MoralerspaceHW_v2.0.0.zip"
+        },
+        "version": "2.0.0"
+    },
     "skkeleton": {
         "cargoLocks": null,
         "date": "2026-01-04",

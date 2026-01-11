@@ -61,6 +61,14 @@
     };
     date = "2025-08-11";
   };
+  moralerspace = {
+    pname = "moralerspace";
+    version = "2.0.0";
+    src = fetchurl {
+      url = "https://github.com/yuru7/moralerspace/releases/download/v2.0.0/MoralerspaceHW_v2.0.0.zip";
+      sha256 = "sha256-UAp3dCl8gpJl69RyttjBFZz7Pp2qTKBXAXCvVBuZG30=";
+    };
+  };
   skkeleton = {
     pname = "skkeleton";
     version = "158ae753bc5099ab12537c23152926c42b1f7c3a";
