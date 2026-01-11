@@ -69,17 +69,18 @@ in
       moralerspace
       udev-gothic-nf
     ];
-    # fontconfig.defaultFonts = {
-    #   serif = [
-    #
-    #   ];
-    #   sansSerif = [
-    #
-    #   ];
-    #   emoji = [
-    #
-    #   ];
-    # };
+    fontconfig.defaultFonts = {
+      serif = [
+        "Noto Serif CJK JP"
+      ];
+      sansSerif = [
+        "Udev Gothic NF"
+        "Noto Color Emoji"
+      ];
+      emoji = [
+        "Noto Color Emoji"
+      ];
+    };
   };
 
   # This value determines the NixOS release from which the default
