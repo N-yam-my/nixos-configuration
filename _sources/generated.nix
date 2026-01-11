@@ -63,10 +63,13 @@
   };
   moralerspace = {
     pname = "moralerspace";
-    version = "2.0.0";
-    src = fetchurl {
-      url = "https://github.com/yuru7/moralerspace/releases/download/v2.0.0/MoralerspaceHW_v2.0.0.zip";
-      sha256 = "sha256-UAp3dCl8gpJl69RyttjBFZz7Pp2qTKBXAXCvVBuZG30=";
+    version = "v2.0.0";
+    src = fetchFromGitHub {
+      owner = "yuru7";
+      repo = "moralerspace";
+      rev = "v2.0.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-bYZ0bVkZd8pz96rI/BjAjR20bOAmd7RnstendaPX0TI=";
     };
   };
   skkeleton = {
