@@ -109,7 +109,7 @@ in
           }
         else
           drv;
-      lazyPath = pkgs.linkFarm "lazy-plugins" (builtins.map mkEntryFromDrv plugins);
+      lazyPath = pkgs.linkFarm "lazy-plugins" (map mkEntryFromDrv plugins);
       lazyConfig = substituteStrings {
         file = ./nvim/init.lua;
         replacements = [
