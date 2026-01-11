@@ -26,7 +26,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   installPhase = ''
     runHook preInstall
 
-    install -Dm444 fonts/ttf/*.ttf -t $out/share/fonts/truetype/
+    install -Dm444 morisawa-biz-ud-mincho-fonts/fonts/ttf/*.ttf -t $out/share/fonts/truetype/
 
     runHook postInstall
   '';
