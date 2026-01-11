@@ -6,7 +6,9 @@
 # https://github.com/nix-community/NixOS-WSL
 
 { config, lib, pkgs, ... }:
-
+let
+  biz-ud-mincho = pkgs.callPackage ./pkgs/biz-ud-mincho { inherit pkgs; };
+in
 {
 	# imports = [
 	# 	# include NixOS-WSL modules
@@ -50,6 +52,17 @@
 	};
 
   time.timeZone = "Asia/Tokyo";
+
+  fonts = {
+    fontDir.enable = true;
+    enableGhostscriptFonts = true;
+    packages = with pkgs; [
+      noto-fonts
+      biz-ud-gothic
+      biz-ud-mincho # local packages
+      moralerspace
+    ];
+  };
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
