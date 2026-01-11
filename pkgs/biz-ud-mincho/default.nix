@@ -11,6 +11,10 @@ stdenvNoCC.mkDerivation (finalAttrs: {
 
   inherit (sources.biz-ud-mincho) pname version src;
   # src: fetchUrl => hoge.zip
+  
+  # Install pkgs.unzip
+  buildInputs = [pkgs.unzip];
+
   unpackPhase = ''
     runHook preUnpack
     
@@ -22,7 +26,7 @@ stdenvNoCC.mkDerivation (finalAttrs: {
   installPhase = ''
     runHook preInstall
 
-    install -Dm444 fonts/ttf/*.ttf -t "$out/share/fonts/truetype/"
+    install -Dm444 fonts/ttf/*.ttf -t $out/share/fonts/truetype/
 
     runHook postInstall
   '';
