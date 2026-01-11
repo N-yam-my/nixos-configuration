@@ -33,7 +33,3 @@ fetch.github = "Shougo/ddc-filter-sorter_lsp_kind"
 [ddc-filter-matcher_prefix]
 src.git = "https://github.com/Shougo/ddc-filter-matcher_prefix"
 fetch.github = "Shougo/ddc-filter-matcher_prefix"
-
-[moralerspace]
-src.manual = "2.0.0"
-fetch.tarball = "https://github.com/yuru7/moralerspace/releases/download/v2.0.0/MoralerspaceHW_v2.0.0.zip"
