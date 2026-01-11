@@ -61,17 +61,6 @@
     };
     date = "2025-08-11";
   };
-  moralerspace = {
-    pname = "moralerspace";
-    version = "v2.0.0";
-    src = fetchFromGitHub {
-      owner = "yuru7";
-      repo = "moralerspace";
-      rev = "v2.0.0";
-      fetchSubmodules = false;
-      sha256 = "sha256-bYZ0bVkZd8pz96rI/BjAjR20bOAmd7RnstendaPX0TI=";
-    };
-  };
   skkeleton = {
     pname = "skkeleton";
     version = "158ae753bc5099ab12537c23152926c42b1f7c3a";
