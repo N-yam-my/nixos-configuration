@@ -20,7 +20,7 @@
       rust-analyzer
 			tinymist
       websocat
-      typstyle
+      # typstyle # included in tinymist
 
       typst
 		];

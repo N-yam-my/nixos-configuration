@@ -11,7 +11,9 @@ local spec = {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
-    event = 'VeryLazy',
+    -- event = 'VeryLazy',
+    -- event = { 'BufReadPre', 'BufNewFile' },
+    event = { 'ColorScheme' },
     opts = {
       options = { theme = 'tokyonight' }
     },
@@ -20,22 +22,24 @@ local spec = {
     'windwp/nvim-autopairs',
     -- see ddc.vim (<CR> mapping)
     opts = {
-        check_ts = true,
-        map_cr = false,
+      check_ts = true,
+      map_cr = false,
     },
   },
   {
     'numToStr/Comment.nvim',
-    event = { 'VeryLazy' },
+    event = { 'InsertEnter' },
     opts = {},
   },
   {
     'hiphish/rainbow-delimiters.nvim',
-    event = { 'BufRead', 'BufNewFile' },
+    -- event = 'VeryLazy',
+    -- event = { 'BufReadPre', 'BufNewFile' },
+    event = { 'ColorScheme' },
   },
   {
     "kylechui/nvim-surround",
-    event = { 'VeryLazy' },
+    event = { 'InsertEnter' },
     -- Configuration here, or leave empty to use defaults
     opts = {},
   },
@@ -43,7 +47,9 @@ local spec = {
     'lukas-reineke/indent-blankline.nvim',
     main = "ibl",
     dependencies = { 'hiphish/rainbow-delimiters.nvim' },
-    event = { 'BufRead', 'BufNewFile' },
+    -- event = { 'BufReadPre', 'BufNewFile' },
+    event = { 'ColorScheme' },
+    -- event = 'VeryLazy',
     config = function()
       local highlight = {
         "RainbowDelimiterRed",
@@ -69,23 +75,23 @@ local spec = {
       )
     end
   },
---   {
---     'nvim-neo-tree/neo-tree.nvim',
---     dependencies = {
---       'nvim-lua/plenary.nvim',
---       'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
---       'MunifTanjim/nui.nvim',
---       -- '3rd/image.nvim', -- Optional image support in preview window: See `# Preview Mode` for more information
---     },
---     branch = 'v3.x',
---     cmd = 'Neotree',
---     keys = {
---       { '<leader>ft', '<cmd>Neotree toggle<CR>', desc = 'NeoTree' },
---     },
---   },
+  --   {
+  --     'nvim-neo-tree/neo-tree.nvim',
+  --     dependencies = {
+  --       'nvim-lua/plenary.nvim',
+  --       'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+  --       'MunifTanjim/nui.nvim',
+  --       -- '3rd/image.nvim', -- Optional image support in preview window: See `# Preview Mode` for more information
+  --     },
+  --     branch = 'v3.x',
+  --     cmd = 'Neotree',
+  --     keys = {
+  --       { '<leader>ft', '<cmd>Neotree toggle<CR>', desc = 'NeoTree' },
+  --     },
+  --   },
   {
     'mattn/vim-sonictemplate',
-    cmd = {'Template', 'Tem'},
+    cmd = { 'Template', 'Tem' },
     config = function()
       vim.g.sonictemplate_vim_template_dir = {
         -- vim.fn.getenv("XDG_DATA_HOME") .. "/nvim/vim-sonictemplate/template",
@@ -104,9 +110,9 @@ local spec = {
   },
   {
     'vim-jp/vimdoc-ja',
-    event = {  'BufRead', 'BufNewFile' },
+    -- event = {  'BufRead', 'BufNewFile' },
     keys = { { 'h', mode = 'c' } }
   },
---   -- { 'vimsence/vimsence', event = 'CursorHold' }
+  --   -- { 'vimsence/vimsence', event = 'CursorHold' }
 }
 return spec

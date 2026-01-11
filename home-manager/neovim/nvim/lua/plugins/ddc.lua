@@ -3,14 +3,9 @@ local spec = {
     'Shougo/pum.vim',
     config = function()
       vim.fn['pum#set_option']({
-        -- auto_confirm_time = 500,
         auto_select = true,
         border = 'single',
-        -- follow_cursor = true,
-        -- padding = true,
-        -- highlight_matches = 'SpellBad',
         preview = false,
-        -- preview_delay = 500,
       })
     end
   },
@@ -43,9 +38,7 @@ local spec = {
         'Shougo/ddc-source-lsp',
         dependencies = {
           'uga-rosa/ddc-source-lsp-setup',
-          config = function ()
-            require('ddc_source_lsp_setup').setup()
-          end,
+          opts = {},
         },
         config = function()
           local capabilities = require("ddc_source_lsp").make_client_capabilities()
@@ -58,7 +51,7 @@ local spec = {
     },
     config = function()
       vim.fn['ddc#custom#patch_global']({
-        backspaceCompletion = true,-- if screen flickers, set false.
+        backspaceCompletion = true, -- if screen flickers, set false.
         -- ui = 'native',
         ui = 'pum',
         -- uiParams = { insert = true, },
@@ -66,8 +59,10 @@ local spec = {
         sourceOptions = {
           _ = {
             matchers = { 'matcher_fuzzy', 'matcher_prefix' },
-            sorters = { 'sorter_fuzzy' , 'sorter_rank' },
+            sorters = { 'sorter_fuzzy', 'sorter_rank' },
             converters = { 'converter_fuzzy' },
+            minAutoCompleteLength = 1,
+            maxItems = 25,
           },
           skkeleton = {
             mark = 'SKK',
@@ -75,8 +70,6 @@ local spec = {
             sorters = {},
             converters = {},
             isVolatile = true,
-            minAutoCompleteLength = 1,
-            maxItems = 25,
           },
           lsp = {
             keywordPattern = '\\k+',
@@ -86,28 +79,23 @@ local spec = {
             converters = { 'converter_kind_labels' },
             isVolatile = true,
             -- forceCompletionPattern = {[['\.\w*|:\w*|->\w*']]},
-            minAutoCompleteLength = 2,
-            maxItems = 25,
           },
           file = {
             mark = 'F',
             isVolatile = true,
             minAutoCompleteLength = 3,
-            forceCompletionPattern = {[['\S/\S*']]},
-            maxItems = 25,
+            forceCompletionPattern = { [['\S/\S*']] },
           },
           around = {
             mark = 'A',
             minAutoCompleteLength = 4,
-            maxItems = 25,
           },
         },
         sourceParams = {
-          around = { maxSize = 500 },
           lsp = {
-            -- confirmBehavior = 'insert',
+            confirmBehavior = 'insert',
+            -- enableAdditonalTextedit = true,
             enableResolveItem = true,
-            enableAdditonalTextedit = true,
             lspengine = 'nvim-lsp',
             snippetEngine = vim.fn['denops#callback#register'](
               function(body)
@@ -115,15 +103,16 @@ local spec = {
               end
             ),
           },
+          around = { maxSize = 500 },
         },
-	      filterParams = {
+        filterParams = {
           converter_fuzzy = {
             hlGroup = 'SpellBad',
           },
-	        converter_kind_labels = {
-	          kindLabels = {
-	            Text =  "",
-              Method =  "",
+          converter_kind_labels = {
+            kindLabels = {
+              Text = "",
+              Method = "",
               Function = "",
               Constructor = "",
               Field = "",
@@ -163,7 +152,7 @@ local spec = {
       vim.fn['ddc#custom#patch_global'](
         { 'ps1', 'dosbatch', 'autohotkey', 'registry', },
         {
-          sourceOptions = { file = { forceCompletionPattern = {[['\S\\\S*']]} } },
+          sourceOptions = { file = { forceCompletionPattern = { [['\S\\\S*']] } } },
           sourceParams = { file = { mode = 'win32' } },
         }
       )
@@ -181,7 +170,7 @@ local spec = {
     keys = {
       {
         '<Tab>',
-        function ()
+        function()
           -- If completion menu is visible: go down by 1 item in menu
           if vim.fn['pum#visible']() == true then
             vim.fn['pum#map#insert_relative'](1)
@@ -190,6 +179,7 @@ local spec = {
           -- If the charactor before cursor is space: insert <Tab>
           local col = vim.fn.col '.' - 1
           if col == 0 or vim.fn.getline('.'):sub(col, col):match('%s') then
+            -- since expr is false
             local key = vim.api.nvim_replace_termcodes('<Tab>', true, false, true)
             return vim.api.nvim_feedkeys(key, 'n', false)
           end
@@ -197,26 +187,30 @@ local spec = {
           vim.fn['ddc#map#manual_complete']()
           return ''
         end,
-        mode = 'i', { noremap = false, silent = true, expr = false },
+        mode = 'i',
+        { noremap = true, silent = true, expr = false },
         desc = "Completion",
       },
       {
         '<S-Tab>',
-        function ()
+        function()
           -- If completion menu is visible: go up by 1 item in menu
           if vim.fn['pum#visible']() == true then
             vim.fn['pum#map#insert_relative'](-1)
             return ''
           end
           -- Else: insert <S-Tab>
+          -- since expr is false
           local key = vim.api.nvim_replace_termcodes('<S-Tab>', true, false, true)
           return vim.api.nvim_feedkeys(key, 'n', false)
-        end, mode = 'i', { noremap = false, silent = true, expr = false },
+        end,
+        mode = 'i',
+        { noremap = true, silent = true, expr = false },
         desc = "Completion back",
       },
       {
         '<CR>',
-        function ()
+        function()
           if vim.fn['pum#visible']() == true then
             if vim.fn['pum#complete_info']()['selected'] == -1 then
               vim.fn['pum#map#select_relative'](-9999, 'ignore')
@@ -224,35 +218,54 @@ local spec = {
             vim.fn['pum#map#confirm']()
             return ''
           end
+          -- nvim-autopairs integration
           local key = require('nvim-autopairs').autopairs_cr()
           return vim.api.nvim_feedkeys(key, 'in', true)
         end,
-        mode = 'i', { noremap = false, expr = false },
+        mode = 'i',
+        { noremap = true, expr = false },
         desc = 'Confirm completion',
       },
-      -- Go to top / bottom of the menu with <Home> / <End>.
-      -- {
-      --   '<Home>',
-      --   function()
-      --     if vim.fn['pum#visible']() == true then
-      --       vim.fn['pum#map#insert_relative'](-9999, 'ignore')
-      --       return ''
-      --     end
-      --     local key = vim.api.nvim_replace_termcodes('<Home>', true, false, true)
-      --     return vim.api.nvim_feedkeys(key, 'n', false)
-      --   end, mode = 'i', { noremap = true, silent = true, expr = false },
-      -- },
-      -- {
-      --   '<End>',
-      --   function()
-      --     if vim.fn['pum#visible']() == true then
-      --       vim.fn['pum#map#insert_relative'](9999, 'ignore')
-      --       return ''
-      --     end
-      --     local key = vim.api.nvim_replace_termcodes('<End>', true, false, true)
-      --     return vim.api.nvim_feedkeys(key, 'n', false)
-      --   end, mode = 'i', { noremap = true, silent = true, expr = false },
-      -- },
+      {
+        '<Home>',
+        function()
+          if vim.fn['pum#visible']() == true then
+            vim.fn['pum#map#insert_relative'](-9999, 'ignore')
+            return ''
+          end
+          local key = vim.api.nvim_replace_termcodes('<Home>', true, false, true)
+          return vim.api.nvim_feedkeys(key, 'n', false)
+        end,
+        mode = 'i',
+        { noremap = true, silent = true, expr = false },
+        desc = 'Go to top in completion menu',
+      },
+      {
+        '<End>',
+        function()
+          if vim.fn['pum#visible']() == true then
+            vim.fn['pum#map#insert_relative'](9999, 'ignore')
+            return ''
+          end
+          local key = vim.api.nvim_replace_termcodes('<End>', true, false, true)
+          return vim.api.nvim_feedkeys(key, 'n', false)
+        end,
+        mode = 'i',
+        { noremap = true, silent = true, expr = false },
+        desc = 'Go to bottom in completion menu',
+      },
+      {
+        '<C-E>',
+        function()
+          if vim.fn['pum#visible']() == true then
+            vim.fn['pum#close']()
+            return ''
+          end
+        end,
+        mode = 'i',
+        { noremap = true, silent = true, expr = false },
+        desc = 'Exit completion menu',
+      }
     },
   },
 }

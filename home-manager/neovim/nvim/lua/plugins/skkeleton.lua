@@ -1,7 +1,7 @@
 local spec = {
   {
     'vim-skk/skkeleton',
-    event = { 'VeryLazy' },
+    -- event = { 'VeryLazy' },
     dependencies = {
       'vim-denops/denops.vim',
       { 'delphinus/skkeleton_indicator.nvim', opts = {} },
@@ -11,7 +11,7 @@ local spec = {
       vim.fn['skkeleton#initialize']()
       vim.fn['skkeleton#config']({
         eggLikeNewline = true,
-        globalDictionaries =  {
+        globalDictionaries = {
           dataPath .. '/skk/SKK-JISYO.L',
           dataPath .. '/skk/SKK-JISYO.law',
         },
@@ -20,10 +20,10 @@ local spec = {
       })
     end,
     keys = {
-      { '<C-j>', '<Plug>(skkeleton-toggle)', mode = 'i'},
-      { '<C-j>', '<Plug>(skkeleton-toggle)', mode = 'c'},
-      { 'jk', '<Plug>(skkeleton-toggle)', mode = 'i'},
-      { 'jk', '<Plug>(skkeleton-toggle)', mode = 'c'},
+      { '<C-L>', '<Plug>(skkeleton-toggle)', mode = 'i' },
+      { '<C-L>', '<Plug>(skkeleton-toggle)', mode = 'c' },
+      { 'jk',    '<Plug>(skkeleton-toggle)', mode = 'i' },
+      { 'jk',    '<Plug>(skkeleton-toggle)', mode = 'c' },
     }
   },
 }
