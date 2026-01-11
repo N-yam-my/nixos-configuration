@@ -23,7 +23,9 @@
     nixosConfigurations = {
       G83HS = nixpkgs.lib.nixosSystem {
         inherit pkgs;
-        inherit sources;
+        speceialArgs = {
+          inherit sources;
+        };
 				system = "x86_64-linux";
 				modules = [
 					./configuration.nix
