@@ -57,7 +57,10 @@ in
     fontDir.enable = true;
     enableGhostscriptFonts = true;
     packages = with pkgs; [
-      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      noto-fonts-color-emoji
+      noto-fonts-monochrome-emoji
       biz-ud-gothic
       biz-ud-mincho # local packages
       moralerspace
