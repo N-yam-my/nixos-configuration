@@ -57,14 +57,29 @@ in
     fontDir.enable = true;
     enableGhostscriptFonts = true;
     packages = with pkgs; [
+      # noto fonts
       noto-fonts-cjk-sans
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
       noto-fonts-monochrome-emoji
+      # morisawa fonts
       biz-ud-gothic
-      biz-ud-mincho # local packages
+      biz-ud-mincho # local package
+      # monospace fonts
       moralerspace
+      udev-gothic-nf
     ];
+    # fontconfig.defaultFonts = {
+    #   serif = [
+    #
+    #   ];
+    #   sansSerif = [
+    #
+    #   ];
+    #   emoji = [
+    #
+    #   ];
+    # };
   };
 
   # This value determines the NixOS release from which the default
