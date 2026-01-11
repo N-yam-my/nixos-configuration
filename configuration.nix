@@ -5,9 +5,9 @@
 # NixOS-WSL specific options are documented on the NixOS-WSL repository:
 # https://github.com/nix-community/NixOS-WSL
 
-{ config, lib, pkgs, ... }:
+{ pkgs, sources, ... }:
 let
-  biz-ud-mincho = pkgs.callPackage ./pkgs/biz-ud-mincho { inherit pkgs; };
+  biz-ud-mincho = pkgs.callPackage ./pkgs/biz-ud-mincho { inherit pkgs sources; };
 in
 {
 	# imports = [

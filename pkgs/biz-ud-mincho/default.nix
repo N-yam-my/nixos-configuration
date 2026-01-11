@@ -2,9 +2,9 @@
   pkgs,
   lib,
   stdenvNoCC,
-  fetchurl,
   nix-update-script,
   sources,
+  ...
 }:
 
 stdenvNoCC.mkDerivation (finalAttrs: {
