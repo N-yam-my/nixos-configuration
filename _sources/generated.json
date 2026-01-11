@@ -1,4 +1,19 @@
 {
+    "biz-ud-mincho": {
+        "cargoLocks": null,
+        "date": null,
+        "extract": null,
+        "name": "biz-ud-mincho",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-fJNjCjud61g8eCyTDfLj9Hj/uZY/RnttgEGHry6FMUk=",
+            "type": "url",
+            "url": "https://github.com/googlefonts/morisawa-biz-ud-mincho/releases/download/v1.06/morisawa-biz-ud-mincho-fonts.zip"
+        },
+        "version": "v1.06"
+    },
     "ddc-filter-converter_kind_labels": {
         "cargoLocks": null,
         "date": "2025-09-07",
