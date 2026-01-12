@@ -11,7 +11,6 @@ local spec = {
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons', opt = true },
-    -- event = 'VeryLazy',
     -- event = { 'BufReadPre', 'BufNewFile' },
     event = { 'ColorScheme' },
     opts = {
@@ -31,12 +30,10 @@ local spec = {
     event = { 'InsertEnter' },
     opts = {},
   },
-  {
-    'hiphish/rainbow-delimiters.nvim',
-    -- event = 'VeryLazy',
-    -- event = { 'BufReadPre', 'BufNewFile' },
-    event = { 'ColorScheme' },
-  },
+  -- {
+  --   'hiphish/rainbow-delimiters.nvim',
+  --   event = { 'ColorScheme' },
+  -- },
   {
     "kylechui/nvim-surround",
     event = { 'InsertEnter' },
@@ -45,11 +42,13 @@ local spec = {
   },
   {
     'lukas-reineke/indent-blankline.nvim',
-    main = "ibl",
-    dependencies = { 'hiphish/rainbow-delimiters.nvim' },
+    dependencies = {
+      'hiphish/rainbow-delimiters.nvim',
+      event = { 'ColorScheme' },
+    },
     -- event = { 'BufReadPre', 'BufNewFile' },
     event = { 'ColorScheme' },
-    -- event = 'VeryLazy',
+    main = "ibl",
     config = function()
       local highlight = {
         "RainbowDelimiterRed",
@@ -92,12 +91,11 @@ local spec = {
   {
     'mattn/vim-sonictemplate',
     cmd = { 'Template', 'Tem' },
-    config = function()
+    init = function ()
       vim.g.sonictemplate_vim_template_dir = {
-        -- vim.fn.getenv("XDG_DATA_HOME") .. "/nvim/vim-sonictemplate/template",
         vim.fn.getenv("HOME") .. "/.dotfiles/misc/vim-sonictemplate/",
       }
-    end
+    end,
   },
   {
     'dstein64/vim-startuptime',

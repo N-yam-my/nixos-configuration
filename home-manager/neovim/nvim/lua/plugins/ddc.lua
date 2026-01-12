@@ -52,9 +52,13 @@ local spec = {
     config = function()
       vim.fn['ddc#custom#patch_global']({
         backspaceCompletion = true, -- if screen flickers, set false.
+      })
+      vim.fn['ddc#custom#patch_global']({
         -- ui = 'native',
         ui = 'pum',
         -- uiParams = { insert = true, },
+      })
+      vim.fn['ddc#custom#patch_global']({
         sources = { 'skkeleton', 'lsp', 'file', 'around', },
         sourceOptions = {
           _ = {
@@ -105,6 +109,8 @@ local spec = {
           },
           around = { maxSize = 500 },
         },
+      })
+      vim.fn['ddc#custom#patch_global']({
         filterParams = {
           converter_fuzzy = {
             hlGroup = 'SpellBad',
@@ -149,13 +155,13 @@ local spec = {
           },
         },
       })
-      vim.fn['ddc#custom#patch_global'](
-        { 'ps1', 'dosbatch', 'autohotkey', 'registry', },
-        {
-          sourceOptions = { file = { forceCompletionPattern = { [['\S\\\S*']] } } },
-          sourceParams = { file = { mode = 'win32' } },
-        }
-      )
+      -- vim.fn['ddc#custom#patch_global'](
+      --   { 'ps1', 'dosbatch', 'autohotkey', 'registry', }, {
+      --     sourceOptions = {
+      --       file = { forceCompletionPattern = { [['\S\\\S*']] } }
+      --     },
+      --     sourceParams = { file = { mode = 'win32' } },
+      --   })
       vim.fn['ddc#enable']()
       -- Close the preview window after CompleteDone
       -- vim.api.nvim_create_autocmd(

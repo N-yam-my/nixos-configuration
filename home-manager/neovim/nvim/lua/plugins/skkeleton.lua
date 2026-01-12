@@ -4,7 +4,7 @@ local spec = {
     -- event = { 'VeryLazy' },
     dependencies = {
       'vim-denops/denops.vim',
-      { 'delphinus/skkeleton_indicator.nvim', opts = {} },
+      { 'delphinus/skkeleton_indicator.nvim', opts = {}, }
     },
     config = function()
       local dataPath = vim.fn.getenv("XDG_DATA_HOME")
