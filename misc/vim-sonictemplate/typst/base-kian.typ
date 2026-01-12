@@ -1,4 +1,4 @@
-#import "@local/MyDocStyle:1.0.0" : *
+#import "@local/myStyle:1.0.0" : *
 #show : init-kian.with(
   title : [{{_input_:title?:Title}}],
   author : "{{_input_:author?:Nyammy}}",
@@ -31,7 +31,7 @@
   )
 )
 #show : workarounds.with()
-#import "@local/MyPackages:1.0.0" : *
+#import "@local/myPackages:1.0.0" : *
 #show : packageConfig.with()
-#import "@local/MyUtils:1.0.0" : *
+#import "@local/myUtils:1.0.0" : *
 {{_cursor_}}
