@@ -44,14 +44,15 @@ local spec = {
       })
       vim.lsp.config('tinymist', {
         settings = {
-          exportPdf = 'onSave',
           formatterMode = 'typstyle',
+          exportPdf = 'onSave',
           semanticTokens = 'disable',
         },
-        -- root_dir = function()
-        --   return vim.fn.getcwd()
-        -- end,
         -- filetypes = { 'typst' },
+        single_file_support = true,
+        root_dir = function(_, on_dir)
+            on_dir(vim.fn.getcwd())
+        end,
       })
       -- Enable LSPs
       local lspNames = {
@@ -59,22 +60,22 @@ local spec = {
         -- 'lemminx',
         'nixd',
         'rust_analyzer',
-        'tinymist'
+        'tinymist',
       }
       vim.lsp.enable(lspNames)
       -- autocmds
       vim.api.nvim_create_autocmd('LspAttach', {
-        callback = function(args)
-          local client = assert(vim.lsp.get_client_by_id(args.data.client_id))
+        callback = function(ev)
+          local client = assert(vim.lsp.get_client_by_id(ev.data.client_id))
           vim.keymap.set(
             'n', '<leader>f', function()
               vim.lsp.buf.format({
-                bufnr = args.buf,
+                bufnr = ev.buf,
                 id = client.id,
                 async = true,
               })
             end,
-            { buffer = arg.buf, desc = 'Format buffer' }
+            { buffer = ev.buf, desc = 'Format buffer' }
           )
         end,
       })
