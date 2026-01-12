@@ -66,7 +66,7 @@ in
       biz-ud-gothic
       biz-ud-mincho # local package
       # monospace fonts
-      moralerspace
+      moralerspace-hw
       udev-gothic-nf
     ];
     fontconfig.defaultFonts = {
