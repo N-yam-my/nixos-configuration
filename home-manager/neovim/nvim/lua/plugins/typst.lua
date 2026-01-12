@@ -1,7 +1,8 @@
 return {
   {
     'chomosuke/typst-preview.nvim',
-    ft = 'typst',
+    -- ft = 'typst',
+    cmd = { 'TypstPreview', 'TypstPreviewToggle' },
     config = function()
       -- local path = vim.fn.getenv("XDG_DATA_HOME")
       require 'typst-preview'.setup {
