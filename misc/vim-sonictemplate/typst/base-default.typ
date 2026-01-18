@@ -2,11 +2,11 @@
 #show : init.with(
   title : [{{_input_:title:Title}}],
   author : "{{_input_:author:Nyammy}}",
-  // titlefmt : x => block[#text(size : 22pt)[#x]],
+  // // titlefmt : x => block[#text(size : 22pt)[#x]],
   // titlefmt : x => {},
   // font-title : none,
   // title-pagebreak : false,
-  // authorfmt : x => block[#text(size : 16pt)[#x]],
+  // // authorfmt : x => block[#text(size : 16pt)[#x]],
   // authorfmt : x => {},
   // page-args : arguments(
   //   width : 182mm,
