@@ -99,7 +99,7 @@ local spec = {
           lsp = {
             confirmBehavior = 'insert',
             -- enableAdditonalTextedit = true,
-            enableResolveItem = true,
+            enableResolveItem = false,
             lspengine = 'nvim-lsp',
             snippetEngine = vim.fn['denops#callback#register'](
               function(body)
