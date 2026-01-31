@@ -36,7 +36,7 @@ let
   };
 in
 {
-  programs.neovim.extraLuaConfig =
+  programs.neovim.initLua =
     let
       plugins = with pkgs.vimPlugins; [
       # dependencies
