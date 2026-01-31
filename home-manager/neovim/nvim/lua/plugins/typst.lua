@@ -15,6 +15,11 @@ return {
           ['websocat'] = "websocat"
         },
       }
-    end
+    end,
+    keys = {
+      {
+        '<leader>pp', '<Cmd>TypstPreviewToggle<CR>', desc = 'toggle typst preview',
+      },
+    },
   },
 }
