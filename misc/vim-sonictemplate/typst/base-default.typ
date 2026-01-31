@@ -28,10 +28,10 @@
   //   }],
   //   numbering: "1 / 1",
   // ),
-  kihon-hanmen : arguments(
-    line-length : 40,
-    number-of-lines : 38
-  ),
+  // kihon-hanmen : arguments(
+  //   line-length : 45,
+  //   number-of-lines : 38
+  // ),
   // font-args : arguments(),
   // text-args : arguments(),
   // par-args : arguments(),
