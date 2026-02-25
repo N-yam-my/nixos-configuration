@@ -16,6 +16,11 @@ vim.keymap.set(
   '<leader>tn',
   '<Cmd>tabnew<CR>'
 )
+vim.keymap.set(
+  'n',
+  '<leader>w',
+  '<Cmd>w<CR>'
+)
 -- https://zenn.dev/vim_jp/articles/43d021f461f3a4
 -- vim.keymap.set(
 --   'n',
