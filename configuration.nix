@@ -68,6 +68,8 @@ in
       # monospace fonts
       moralerspace-hw
       udev-gothic-nf
+      # google-fonts
+      google-fonts
     ];
     fontconfig.defaultFonts = {
       serif = [
