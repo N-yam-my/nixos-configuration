@@ -4,7 +4,7 @@ local spec = {
     event = 'InsertEnter',
     keys = {
       {
-        "<C-K>",
+        "<C-H>",
         function()
           require('luasnip').jump(1)
         end,
