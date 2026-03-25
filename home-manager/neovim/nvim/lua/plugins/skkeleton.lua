@@ -8,7 +8,16 @@ local spec = {
     },
     config = function()
       local dataPath = vim.fn.expand("$XDG_DATA_HOME")
-      vim.fn['skkeleton#register_kanatable']('azik', { jj = 'escape' }, true)
+      vim.fn['skkeleton#register_kanatable']('azik', {
+        [";"] = 'henkanPoint',
+        [" "] = 'henkanFirst',
+        ["/"] = 'abbrev',
+        ["q"] = 'katakana',
+        ["Q"] = 'hankatakana',
+        ["<C-l>"] = 'zenkaku',
+        ["<C-q>"] = 'disable',
+        ["jk"] = 'escape'
+      }, true)
       -- 記号
       vim.fn['skkeleton#register_kanatable']('azik', {
         ["!"] = { '！', '' },
@@ -26,6 +35,8 @@ local spec = {
         ["z:"] = { '：', '' },
         ["z/"] = { '・', '' },
         ["z "] = { '　', '' },
+        ["z("] = { '（', '' },
+        ["z)"] = { '）', '' },
         ["z["] = { '『', '' },
         ["z]"] = { '』', '' },
         ["xxh"] = { '←', '' },
@@ -596,14 +607,15 @@ local spec = {
         showCandidatesCount = 1,
         userDictionary = vim.fn.expand('$HOME/.dotfiles/misc/skkeleton'),
       })
-      vim.fn['skkeleton#register_keymap']('input', ';', 'henkanPoint')
-      vim.fn['skkeleton#register_keymap']('input', 'q', 'katakana')
-      vim.fn['skkeleton#register_keymap']('input', 'Q', 'hankatakana')
-      vim.fn['skkeleton#register_keymap']('input', '<C-q>', 'zenkaku')
-      vim.fn['skkeleton#register_keymap']('input', '/', 'abbrev')
+      -- vim.fn['skkeleton#register_keymap']('input', ';', 'henkanPoint')
+      -- vim.fn['skkeleton#register_keymap']('input', 'q', 'katakana')
+      -- vim.fn['skkeleton#register_keymap']('input', 'Q', 'hankatakana')
+      vim.fn['skkeleton#register_keymap']('input', '<C-q>', 'disable')
+      -- vim.fn['skkeleton#register_keymap']('input', '/', 'abbrev')
       vim.fn['skkeleton#register_keymap']('input', 'l', false)
-      vim.fn['skkeleton#register_keymap']('input', ' ', 'henkanFirst')
-
+      -- vim.fn['skkeleton#register_keymap']('input', ' ', 'henkanFirst')
+      vim.fn['skkeleton#register_keymap']('henkan', 'x', false)
+      vim.fn['skkeleton#register_keymap']('input', '>', 'henkanBackward')
       vim.fn['skkeleton#register_keymap']('henkan', 'X', false)
       vim.fn['skkeleton#register_keymap']('henkan', '<', 'purgeCandidate')
       vim.fn['skkeleton#initialize']()
