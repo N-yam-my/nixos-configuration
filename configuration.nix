@@ -8,6 +8,7 @@
 { pkgs, sources, ... }:
 let
   biz-ud-mincho = pkgs.callPackage ./pkgs/biz-ud-mincho { inherit pkgs sources; };
+  finale-maestro = pkgs.callPackage ./pkgs/finale-maestro { inherit pkgs sources; };
 in
 {
 	# imports = [
@@ -70,6 +71,8 @@ in
       udev-gothic-nf
       # google-fonts
       google-fonts
+      # musical fonts
+      finale-maestro
     ];
     fontconfig.defaultFonts = {
       serif = [
