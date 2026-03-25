@@ -37,3 +37,7 @@ fetch.github = "Shougo/ddc-filter-matcher_prefix"
 [biz-ud-mincho]
 src.manual = "v1.06"
 fetch.url = "https://github.com/googlefonts/morisawa-biz-ud-mincho/releases/download/v1.06/morisawa-biz-ud-mincho-fonts.zip"
+
+[finale-maestro]
+src.git = "https://github.com/eNote-GmbH/Maestro"
+fetch.github = "eNote-GmbH/Maestro"
