@@ -13,7 +13,7 @@ local spec = {
         silent = true,
       },
       {
-        "<C-J>",
+        "<C-L>",
         function()
           require('luasnip').jump(-1)
         end,
