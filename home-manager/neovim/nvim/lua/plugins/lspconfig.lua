@@ -59,7 +59,7 @@ local spec = {
         'lua_ls',
         -- 'lemminx',
         'nixd',
-        'rust_analyzer',
+        -- 'rust_analyzer',
         'tinymist',
       }
       vim.lsp.enable(lspNames)
