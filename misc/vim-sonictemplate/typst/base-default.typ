@@ -1,7 +1,7 @@
-#import "@local/myStyle:1.0.0" : *
-#show : init.with(
-  title : [{{_input_:title:Title}}],
-  author : "{{_input_:author:Nyammy}}",
+#import "@local/myStyle:1.0.0": *
+#show: init.with(
+  title: [{{_input_:title:Title}}],
+  author: "{{_input_:author:Nyammy}}",
   // // titlefmt : x => block[#text(size : 22pt)[#x]],
   // titlefmt : x => {},
   // // authorfmt : x => block[#text(size : 16pt)[#x]],
@@ -44,7 +44,7 @@
 // #show : workarounds.with()
 #import "@preview/cjk-unbreak:0.2.3": remove-cjk-break-space
 #show: remove-cjk-break-space
-#import "@local/myPackages:1.0.0" : *
-#show : packageConfig.with()
-#import "@local/myUtils:1.0.0" : *
+#import "@local/myPackages:1.0.0": *
+#show: packageConfig.with()
+#import "@local/myUtils:1.0.0": *
 {{_cursor_}}
