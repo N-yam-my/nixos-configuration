@@ -9,6 +9,7 @@
 		./gc.nix
 		./git.nix
 		./neovim
+    ./pandoc.nix
     ./typst.nix
 		./zsh
 	];
