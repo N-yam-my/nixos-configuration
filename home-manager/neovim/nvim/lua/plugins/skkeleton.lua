@@ -14,8 +14,8 @@ local spec = {
         ["/"] = 'abbrev',
         ["q"] = 'katakana',
         ["Q"] = 'hankatakana',
-        ["<C-l>"] = 'zenkaku',
-        ["<C-q>"] = 'disable',
+        ["<C-q>"] = 'zenkaku',
+        -- ["<C-l>"] = 'zenkaku',
         ["gg"] = 'escape'
       }, true)
       -- 記号
@@ -611,9 +611,9 @@ local spec = {
       })
       -- vim.fn['skkeleton#register_keymap']('input', ';', 'henkanPoint')
       -- vim.fn['skkeleton#register_keymap']('input', 'q', 'katakana')
-      -- vim.fn['skkeleton#register_keymap']('input', 'Q', 'hankatakana')
-      vim.fn['skkeleton#register_keymap']('input', '<C-l>', 'zenkaku')
-      vim.fn['skkeleton#register_keymap']('input', '<C-q>', 'disable')
+      vim.fn['skkeleton#register_keymap']('input', 'Q', 'hankatakana')
+      -- vim.fn['skkeleton#register_keymap']('input', '<C-l>', 'zenkaku')
+      vim.fn['skkeleton#register_keymap']('input', '<C-q>', 'zenkaku')
       -- vim.fn['skkeleton#register_keymap']('input', '/', 'abbrev')
       vim.fn['skkeleton#register_keymap']('input', 'l', false)
       -- vim.fn['skkeleton#register_keymap']('input', ' ', 'henkanFirst')
