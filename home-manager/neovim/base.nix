@@ -20,8 +20,8 @@
       rust-analyzer
 			tinymist
       websocat
-      # typstyle # included in tinymist
 
+      # typstyle # included in tinymist
       typst
 		];
 		# Install lazy.nvim
