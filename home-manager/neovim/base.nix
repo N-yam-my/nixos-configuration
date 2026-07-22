@@ -3,6 +3,8 @@
 		enable = true;
 		viAlias = true;
 		vimAlias = true;
+    withRuby = true;
+    withPython3 = true;
 		# Packages inside neovim
 		extraPackages = with pkgs; [
       # dependencies
