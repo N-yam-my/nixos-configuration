@@ -18,6 +18,10 @@ in
 
 	wsl.enable = true;
 	wsl.defaultUser = "nyammy";
+  wsl.usbip = {
+    enable = true;
+    autoAttach = [ "2-14" ];
+  };
 
 	nix = {
 		settings = {
