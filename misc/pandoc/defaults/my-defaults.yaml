@@ -1,0 +1,14 @@
+from: markdown+east_asian_line_breaks
+
+to: docx
+output-file: 
+
+filters:
+  - citeproc
+  - pagebreak.lua
+  # - wordcount.lua
+
+cite-method: citeproc
+csl: precedent-jp.csl
+
+reference-doc: reference.docx

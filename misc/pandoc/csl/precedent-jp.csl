@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<style xmlns="http://purl.org/net/xbiblio/csl" version="1.0" class="in-text" default-locale="ja-JP">
+  <info>
+    <title>Styles for Precedents in Japan</title>
+    <id>e32b980d-8f89-fd08-11e2-ddc3379ac49e</id>
+    <author>
+      <name>Naohiko YAMANAKA</name>
+      <email>naohiko.yamanaka.1219@gmail.com</email>
+    </author>
+    <category citation-format="label"/>
+    <category field="law"/>
+    <updated>2026-10-5T12:00:00+09:00</updated>
+    <rights license="http://creativecommons.org/licenses/by-sa/3.0/">This work is licensed under a Creative Commons Attribution-ShareAlike 3.0 License</rights>
+  </info>
+  <macro name="juridiction">
+    <choose>
+      <if variable="juridiction">
+        <text variable="juridiction"/>
+      </if>
+    </choose>
+  </macro>
+  <macro name="divison">
+    <choose>
+      <if variable="division">
+        <text variable="division" suffix="支"/>
+      </if>
+    </choose>
+  </macro>
+  <macro name="note">
+    <choose>
+      <if variable="note">
+        <text variable="note"/>
+      </if>
+      <else>
+        <text value="判"/>
+      </else>
+    </choose>
+  </macro>
+  <macro name="date-citation">
+    <choose>
+      <if variable="issued">
+        <date variable="issued" delimiter="・">
+          <date-part name="year"/>
+          <date-part name="month" form="numeric"/>
+          <date-part name="day" form="numeric"/>
+        </date>
+      </if>
+    </choose>
+  </macro>
+  <macro name="date-bibliography">
+    <choose>
+      <if variable="issued">
+        <date variable="issued">
+          <date-part name="year" suffix="年"/>
+          <date-part name="month" form="numeric" suffix="月"/>
+          <date-part name="day" form="numeric" suffix="日"/>
+        </date>
+      </if>
+    </choose>
+  </macro>
+  <macro name="volume">
+    <choose>
+      <if variable="volume">
+        <text variable="volume" suffix="巻"/>
+      </if>
+    </choose>
+  </macro>
+  <macro name="issue">
+    <choose>
+      <if variable="issue">
+        <text variable="issue" suffix="号"/>
+      </if>
+    </choose>
+  </macro>
+  <macro name="page">
+    <choose>
+      <if variable="page">
+        <text variable="page" suffix="頁"/>
+      </if>
+    </choose>
+  </macro>
+  <citation>
+    <sort>
+      <key variable="authority"/>
+      <!-- <key variable="issued"/> -->
+    </sort>
+    <layout prefix="" suffix="" delimiter="、">
+      <choose>
+        <if match="all" type="legal_case" variable="title">
+          <text variable="title"/>
+          <group prefix="(" suffix=")" delimiter="">
+            <text variable="authority"/>
+            <text macro="note"/>
+            <text macro="date-citation"/>
+            <text variable="publisher"/>
+            <text variable="volume" suffix="-"/>
+            <text variable="issue" suffix="-"/>
+            <text variable="page"/>
+          </group>
+        </if>
+        <else-if type="legal_case">
+          <group delimiter="">
+            <text variable="authority"/>
+            <text macro="note"/>
+            <text macro="date-citation"/>
+            <text variable="publisher"/>
+            <text variable="volume" suffix="-"/>
+            <text variable="issue" suffix="-"/>
+            <text variable="page"/>
+          </group>
+        </else-if>
+        <else>
+          <text variable="title"/>
+        </else>
+      </choose>
+    </layout>
+  </citation>
+  <bibliography>
+    <sort>
+      <key variable="authority"/>
+      <!-- <key variable="issued"/> -->
+    </sort>
+    <layout>
+      <choose>
+        <if match="all" type="legal_case" variable="title">
+          <group prefix="" suffix="" delimiter="">
+            <text variable="authority"/>
+            <text macro="note"/>
+            <text macro="date-bibliography"/>
+            <text variable="publisher"/>
+            <text variable="volume" suffix="巻"/>
+            <text variable="issue" suffix="号"/>
+            <text variable="page" suffix="頁"/>
+          </group>
+          <text variable="title" prefix="(" suffix=")"/>
+        </if>
+        <else-if type="legal_case">
+          <group delimiter="">
+            <text variable="authority"/>
+            <text macro="note"/>
+            <text macro="date-bibliography"/>
+            <text variable="publisher"/>
+            <text variable="volume" suffix="巻"/>
+            <text variable="issue" suffix="号"/>
+            <text variable="page" suffix="頁"/>
+          </group>
+        </else-if>
+        <else>
+          <text variable="title"/>
+        </else>
+      </choose>
+    </layout>
+  </bibliography>
+ </style>
